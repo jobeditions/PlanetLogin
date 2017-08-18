@@ -19,14 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::group(['middleware' => 'web'], function () {
 Route::prefix('/admin')->group(function(){
-Route::get('/home','AdminController@index')->name('admin.home')->middleware('auth');
-Route::get('/login','Admin\LoginController@showLoginForm')->name('admin.login')->middleware('guest');
-Route::post('/login','Admin\LoginController@login')->middleware('guest');
+Route::get('/home','AdminController@index')->name('admin.home');
+Route::get('/login','Admin\LoginController@showLoginForm')->name('admin.login');
+Route::post('/login','Admin\LoginController@login');
 });
-Route::post('/admin-password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email')->middleware('guest');
-Route::get('/admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request')->middleware('guest');
-Route::post('/admin-password/reset','Admin\ResetPasswordController@reset')->middleware('guest');
-Route::get('/admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin.password.reset')->middleware('guest');
+Route::post('/admin-password/email','Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+Route::get('/admin-password/reset','Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+Route::post('/admin-password/reset','Admin\ResetPasswordController@reset');
+Route::get('/admin-password/reset/{token}','Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
 
+});

@@ -83,6 +83,7 @@
                        
                         <a href="#" data-toggle="modal" data-target="#exampleModalLong" class="login">Login</a>
                         <a href="#" data-toggle="modal" data-target="#exampleModalLonger" class="register">Register</a>
+                        <a href="#" data-toggle="modal" data-target="#exampleModalLongest" class="admin">Admin</a>
                     @endauth
                 </div>
             @endif
@@ -102,10 +103,8 @@
             </div>
         </div>
 
-
-        <!-- Modal-Window/Ajax -->
-
-     <!-- Modal -->
+<!-- Modal-Window/Ajax -->
+ <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     
@@ -307,6 +306,82 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="exampleModalLongest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Admin Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+
+      <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+
+                                <a class="btn btn-link" href="#" data-toggle="modal" data-target="#exampleModalLongerrs" class="password">
+                                    Forgot Your Password?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+
+      </div><!--modal-body-->
+      
+    </div><!--modal-content-->
+
+  </div><!--modal-dialog-->
+ </div><!--modal fade-->
+
 
     </body>
 </html>

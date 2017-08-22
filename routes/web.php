@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::prefix('/admin')->group(function(){
+Route::group(['middleware' => 'web'], function () {
+Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+Route::get('/', 'AdminController@index')->name('admin.dashboard');
+});
+});

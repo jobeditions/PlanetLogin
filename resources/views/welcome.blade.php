@@ -74,16 +74,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" id="i3">
            @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" id="target">
                     @auth 
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                        
-                        <a href="#" data-toggle="modal" data-target="#exampleModalLong" class="login">Login</a>
-                        <a href="#" data-toggle="modal" data-target="#exampleModalLonger" class="register">Register</a>
-                        <a href="#" data-toggle="modal" data-target="#exampleModalLongest" class="admin">Admin</a>
+                        <a href="#" data-toggle="modal" id="login">Login</a>
+                        <a href="#" data-toggle="modal" id="register">Register</a>
+                        <a href="#" data-toggle="modal" id="admin">Admin</a>
                     @endauth
                 </div>
             @endif
@@ -103,9 +103,9 @@
             </div>
         </div>
 
-<!-- Modal-Window/Ajax -->
+
  <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalLong" data-dismiss="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     
     <div class="modal-content">
@@ -119,7 +119,7 @@
       
       <div class="modal-body">
 
-      <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                   <form class="form-horizontal" id="user_login" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -166,37 +166,14 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="#" data-toggle="modal" data-target="#exampleModalLongerrs" class="password">
+                                <a class="btn btn-link" href="#" data-toggle="modal" id="usermail" class="password">
                                     Forgot Your Password?
                                 </a>
                             </div>
                         </div>
                     </form>
 
-      </div><!--modal-body-->
-      
-    </div><!--modal-content-->
-
-  </div><!--modal-dialog-->
- </div><!--modal fade-->
-
- <!-- Modal-Window/Ajax -->
-
-     <!-- Modal -->
-<div class="modal fade" id="exampleModalLonger" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">User Registration</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-      <div class="modal-body">
-      <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" id="user_register" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -258,25 +235,7 @@
                         </div>
                     </form>
 
-      </div><!--modal-body-->
-      
-    </div><!--modal-content-->
-
-  </div><!--modal-dialog-->
- </div><!--modal fade-->
-
-
-<div class="modal fade" id="exampleModalLongerrs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
+                    <form class="form-horizontal" id="user_email" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -300,28 +259,9 @@
                                 </button>
                             </div>
                         </div>
-      </form>
-    </div>
-      
-    </div>
-  </div>
-</div>
+                    </form>
 
-<div class="modal fade" id="exampleModalLongest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Admin Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-      <div class="modal-body">
-
-      <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
+                     <form class="form-horizontal" id="admin_login" method="POST" action="{{ route('admin.login.submit') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -368,30 +308,15 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="#" data-toggle="modal" data-target="#exampleModalLongests" class="password">
+                                <a class="btn btn-link" href="#" data-toggle="modal" id="adminmail" class="password">
                                     Forgot Your Password?
                                 </a>
                             </div>
                         </div>
                     </form>
 
-      </div><!--modal-body-->
-      
-    </div><!--modal-content-->
 
-  </div><!--modal-dialog-->
- </div><!--modal fade-->
-<div class="modal fade" id="exampleModalLongests" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Password Reset for Admins</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="{{ route('admin.password.email') }}">
+                     <form class="form-horizontal" id="admin_password" method="POST" action="{{ route('admin.password.email') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -415,12 +340,75 @@
                                 </button>
                             </div>
                         </div>
-      </form>
-    </div>
+        </form>
+
+      </div><!--modal-body-->
       
-    </div>
-  </div>
-</div>
+    </div><!--modal-content-->
+
+  </div><!--modal-dialog-->
+ </div><!--modal fade-->
+
+<script >
+$('#i3').find('#target').find('#login').on('click', function (event) {
+    event.preventDefault();
+      $('.modal-title').text('Connéxion Utilisateur');
+      $('#user_login').show(400);
+      $('#user_register').hide(400);
+      $('#admin_login').hide(400);
+      $('#user_email').hide(400);
+      $('#admin_password').hide(400);
+      $('#exampleModalLong').modal();
+   
+});
+$('#i3').find('#target').find('#register').on('click', function (event) {
+    event.preventDefault();
+      $('.modal-title').text('Inscrire Utilisateur');
+      $('#user_register').show(400);
+      $('#user_login').hide(400);
+      $('#admin_login').hide(400);
+      $('#user_email').hide(400);
+      $('#admin_password').hide(400);
+      $('#exampleModalLong').modal();
+   
+});
+
+$('#i3').find('#target').find('#admin').on('click', function (event) {
+    event.preventDefault();
+      $('.modal-title').text('Connéxion Admin');
+      $('#admin_login').show(400);
+      $('#user_login').hide(400);
+      $('#user_register').hide(400);
+      $('#user_email').hide(400);
+      $('#admin_password').hide(400);
+      $('#exampleModalLong').modal();
+   
+});
+
+$('.modal-body').find('#user_login').find('#usermail').on('click', function (event) {
+    event.preventDefault();
+      $('.modal-title').text('Réinitialiser le Mot de Passe-Utilisateur');
+      $('#user_email').show(400);
+      $('#user_login').hide(400);
+      $('#admin_login').hide(400);
+      $('#user_register').hide(400);
+      $('#admin_password').hide(400);
+      $('#exampleModalLong').modal();
+   
+});
+
+$('.modal-body').find('#admin_login').find('#adminmail').on('click', function (event) {
+    event.preventDefault();
+      $('.modal-title').text('Réinitialiser le Mot de Passe-ADMIN');
+      $('#admin_password').show(400);
+      $('#user_email').hide(400);
+      $('#user_login').hide(400);
+      $('#admin_login').hide(400);
+      $('#user_register').hide(400);
+      $('#exampleModalLong').modal();
+   
+});
+</script>
 
     </body>
 </html>

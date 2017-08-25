@@ -72,7 +72,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
 
         <div class="flex-center position-ref full-height" id="i3">
            @if (Route::has('login'))
@@ -348,67 +348,64 @@
 
   </div><!--modal-dialog-->
  </div><!--modal fade-->
-
 <script >
 $('#i3').find('#target').find('#login').on('click', function (event) {
     event.preventDefault();
-      $('.modal-title').text('Connéxion Utilisateur');
       $('#user_login').show(400);
       $('#user_register').hide(400);
       $('#admin_login').hide(400);
-      $('#user_email').hide(400);
-      $('#admin_password').hide(400);
-      $('#exampleModalLong').modal();
-   
+      modals('Connéxion Utilisateur');
+     
 });
 $('#i3').find('#target').find('#register').on('click', function (event) {
     event.preventDefault();
-      $('.modal-title').text('Inscrire Utilisateur');
       $('#user_register').show(400);
       $('#user_login').hide(400);
       $('#admin_login').hide(400);
-      $('#user_email').hide(400);
-      $('#admin_password').hide(400);
-      $('#exampleModalLong').modal();
-   
+      modals('Inscrire Utilisateur');
 });
 
 $('#i3').find('#target').find('#admin').on('click', function (event) {
     event.preventDefault();
-      $('.modal-title').text('Connéxion Admin');
       $('#admin_login').show(400);
       $('#user_login').hide(400);
       $('#user_register').hide(400);
-      $('#user_email').hide(400);
-      $('#admin_password').hide(400);
-      $('#exampleModalLong').modal();
+      modals('Connéxion Admin');
    
 });
 
 $('.modal-body').find('#user_login').find('#usermail').on('click', function (event) {
     event.preventDefault();
-      $('.modal-title').text('Réinitialiser le Mot de Passe-Utilisateur');
       $('#user_email').show(400);
-      $('#user_login').hide(400);
-      $('#admin_login').hide(400);
-      $('#user_register').hide(400);
       $('#admin_password').hide(400);
-      $('#exampleModalLong').modal();
-   
+      modalsecond('Réinitialiser le Mot de Passe-Utilisateur');
 });
 
 $('.modal-body').find('#admin_login').find('#adminmail').on('click', function (event) {
     event.preventDefault();
-      $('.modal-title').text('Réinitialiser le Mot de Passe-ADMIN');
       $('#admin_password').show(400);
       $('#user_email').hide(400);
+      modalsecond('Réinitialiser le Mot de Passe-ADMIN');
+   
+});
+
+function modalsecond(title){
+      $('.modal-title').text(title);
       $('#user_login').hide(400);
       $('#admin_login').hide(400);
       $('#user_register').hide(400);
       $('#exampleModalLong').modal();
-   
-});
+}
+
+function modals(title){
+      $('.modal-title').text(title);
+      $('#user_email').hide(400);
+      $('#admin_password').hide(400);
+      $('#exampleModalLong').modal();
+}
 </script>
 
-    </body>
+
+
+ </body>
 </html>

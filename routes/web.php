@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
    Route::get('/home', 'HomeController@index')->name('home');
+   Route::get('/utilisateur', 'HomeController@indexUser')->name('homeuser');
 
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+   Auth::routes();
 
    Route::get('/home', 'HomeController@index')->name('home');
    Route::get('/utilisateur', 'HomeController@indexUser')->name('homeuser');
@@ -29,7 +29,10 @@ Auth::routes();
    Route::post('/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
    Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
    Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
-});
+   });
+   });
 
-});
+   Route::resource('abonnement','AbonnementController', ['except' => ['index']]);
+
+
  

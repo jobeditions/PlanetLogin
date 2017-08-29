@@ -35,24 +35,22 @@
                             <input type="text" placeholder="Search products...">
                             <input type="submit" value="Search">
                         </form>
-                    </div>
+                    </div><!--single-sidebar-->
                     
                     @include('partials.vente.singleoffer_sidebar')
                     @include('partials.vente.singleoffer_sidebar1')
                     
-                </div>
+                </div><!--row-->
                 @include('partials.vente.single_offer')
-        </div>
-    </div>
+                
                 @include('partials.vente.singleoffer_carousel')        
                         
-                        
-
-                    </div>                    
-                </div>
-            </div>
-        </div>
-    </div>
+                 </div><!--product-content-right-->             
+               </div><!--col-md-8-->
+            </div><!--col-md-4-->
+        </div><!--col-row-->
+    </div><!--container-->
+</div><!--single-product-area-->
   @endsection
   @section('script')
   @include('partials.vente.scripts')

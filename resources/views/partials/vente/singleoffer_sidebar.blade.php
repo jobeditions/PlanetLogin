@@ -1,4 +1,4 @@
-<div class="single-sidebar">
+                    <div class="single-sidebar">
                         <h2 class="sidebar-title">Products</h2>
                         <div class="thubmnail-recent">
                             <img src="/img/ecommerce/product-thumb-1.jpg" class="recent-thumb" alt="">
@@ -28,4 +28,4 @@
                                 <ins>$700.00</ins> <del>$800.00</del>
                             </div>                             
                         </div>
-                    </div>
+                    </div><!--single-sidebar-->

@@ -12,7 +12,7 @@
                                 <div class="product-images">
                                     <div class="product-main-img">
                                         <img src="/{{$abons->image}}" alt="">
-                                    </div>
+                                    </div><!--product-main-img-->
                                     
                                     <div class="product-gallery">
                                         
@@ -20,9 +20,9 @@
                                         <img src="/img/ecommerce/product-thumb-2.jpg" alt="">
                                         <img src="/img/ecommerce/product-thumb-3.jpg" alt="">
                                         <img src="/img/ecommerce/product-thumb-4.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
+                                    </div><!--photo-gallery-->
+                                </div><!--product-images-->
+                            </div><!--col-sm-6-->
                             
                             <div class="col-sm-6">
                                 <div class="product-inner">
@@ -70,9 +70,12 @@
                                                     </div>
                                                     <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
                                                     <p><input type="submit" value="Submit"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                </div><!--submit-review-->
+                                            </div><!--tab-pane fade-->
+                                        </div><!--tab-content-->
+                                    </div><!--tab-panel-->
                                     
-                                </div>
+                                </div><!--product-inner-->
+                            </div><!--col-sm-6-->
+                        </div><!--row-->
+                        

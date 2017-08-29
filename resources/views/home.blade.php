@@ -277,14 +277,9 @@
                     <div class="brand-wrapper">
                         <h2 class="section-title">Brands</h2>
                         <div class="brand-list">
-                            <img src="img/ecommerce/services_logo__1.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__2.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__3.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__4.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__1.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__2.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__3.jpg" alt="">
-                            <img src="img/ecommerce/services_logo__4.jpg" alt="">                            
+                        @foreach($website as $web)
+                            <img src={{$web->imageweb}} alt="">                         
+                        @endforeach
                         </div>
                     </div>
                 </div>

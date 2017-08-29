@@ -154,47 +154,48 @@
             </div>
         </div>
     </div> <!-- End mainmenu area -->
-    
-   <!-- 
-    <div class="promo-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo">
-                        <i class="fa fa-refresh"></i>
-                        <p>30 Days return</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo">
-                        <i class="fa fa-truck"></i>
-                        <p>Free shipping</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo">
-                        <i class="fa fa-lock"></i>
-                        <p>Secure payments</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-promo">
-                        <i class="fa fa-gift"></i>
-                        <p>New products</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End promo area -->
+  
     
     <div class="maincontent-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="latest-product">
-                        <h4 class="section-title">Latest Products</h4>
+                        <h4 class="section-title">Nouvelles annonces</h4>
+                        <div class="product-carousel">
+                            
+
+
+
+                        @foreach($announce as $anon)
+                            <div class="single-product">
+                                <div class="product-f-image">
+                                    <img src={{$anon->image}} alt="">
+                                    <div class="product-hover">
+                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                    </div>
+                                </div><!--End of Product-f-Image-->
+                                
+                                <h2><a href="single-product.html">{{$anon->title}}</a></h2>
+                                
+                                <div class="product-carousel-price">
+                                    <ins>{{$anon->pricenew}}</ins> <del>{{$anon->priceold}}</del>
+                                </div> 
+                            </div><!--End of Single Product-->
+                        @endforeach
+                             
+                        </div><!--End of Product Carousel-->
+                    </div><!--End of Latest Product-->
+                </div><!--End of col-md-12-->
+            </div><!--End of Row-->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-product">
+                        <h4 class="section-title">Des Abonnements offert</h4>
                         <div class="product-carousel">
                             
 
@@ -218,53 +219,13 @@
                             </div><!--End of Single Product-->
                         @endforeach
                              
-
-
-
-
-
                         </div><!--End of Product Carousel-->
                     </div><!--End of Latest Product-->
                 </div><!--End of col-md-12-->
             </div><!--End of Row-->
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="latest-product">
-                        <h4 class="section-title">Latest Products</h4>
-                        <div class="product-carousel">
-                            
 
-
-
-                        @foreach($abonnement as $abon)
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src={{$abon->image}} alt="">
-                                    <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                    </div>
-                                </div><!--End of Product-f-Image-->
-                                
-                                <h2><a href="single-product.html">{{$abon->title}}</a></h2>
-                                
-                                <div class="product-carousel-price">
-                                    <ins>{{$abon->pricenew}}</ins> <del>{{$abon->priceold}}</del>
-                                </div> 
-                            </div><!--End of Single Product-->
-                        @endforeach
-                             
-
-
-
-
-
-                        </div><!--End of Product Carousel-->
-                    </div><!--End of Latest Product-->
-                </div><!--End of col-md-12-->
-            </div><!--End of Row-->
-
+            
             
         </div>
     </div> <!-- End main content area -->

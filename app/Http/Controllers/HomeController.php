@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Abonnement;
 use App\Website;
+use App\Announce;
+
 
 
 class HomeController extends Controller
@@ -28,7 +30,8 @@ class HomeController extends Controller
     {
         $abonnement=Abonnement::get();
         $website=Website::get();
-        return view('home',compact('abonnement','website'));
+        $announce=Announce::get(); 
+        return view('home',compact('abonnement','website','announce'));
     }
 
     public function indexUser()

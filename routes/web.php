@@ -33,6 +33,7 @@ Route::get('/', function () {
    });
 
    Route::resource('abonnement','AbonnementController', ['except' => ['index']]);
+   Route::resource('announces','AnnounceController', ['except' => ['index']]);
 
 
  

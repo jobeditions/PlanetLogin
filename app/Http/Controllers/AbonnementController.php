@@ -36,8 +36,10 @@ class AbonnementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+
     {
-        return view('vente.singleproduct')
+        $abonnement=Abonnement::find($id);
+        return view('vente.single_offer',compact('abonnement'));
     }
 
     /**

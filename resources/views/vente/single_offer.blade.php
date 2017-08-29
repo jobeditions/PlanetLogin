@@ -86,17 +86,18 @@
                         <div class="product-breadcroumb">
                             <a href="">Home</a>
                             <a href="">Category Name</a>
-                            <a href="">Sony Smart TV - 2015</a>
+                            <a href="">{{$abons->title}}</a>
                         </div>
                         
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="/img/ecommerce/product-2.jpg" alt="">
+                                        <img src="/{{$abons->image}}" alt="">
                                     </div>
                                     
                                     <div class="product-gallery">
+                                        
                                         <img src="/img/ecommerce/product-thumb-1.jpg" alt="">
                                         <img src="/img/ecommerce/product-thumb-2.jpg" alt="">
                                         <img src="/img/ecommerce/product-thumb-3.jpg" alt="">
@@ -109,7 +110,7 @@
                                 <div class="product-inner">
                                     <h2 class="product-name"></h2>
                                     <div class="product-inner-price">
-                                        <ins>$700.00</ins> <del>$800.00</del>
+                                        <ins>{{$abons->pricenew}}</ins> <del>{{$abons->priceold}}</del>
                                     </div>    
                                     
                                     <form action="" class="cart">
@@ -130,10 +131,8 @@
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <h2>Product Description</h2>  
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
-
-                                                <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                                <h2>{{$abons->title}}</h2>  
+                                                <p>{{$abons->description}}</p>
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
                                                 <h2>Reviews</h2>
@@ -166,97 +165,27 @@
                         <div class="related-products-wrapper">
                             <h2 class="related-products-title">Related Products</h2>
                             <div class="related-products-carousel">
+                            @foreach($abonnements as $abon) 
+
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="/img/ecommerce/product-1.jpg" alt="">
+                                        <img src="/{{$abon->image}}" alt="">
                                         <div class="product-hover">
                                             <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">Sony Smart TV - 2015</a></h2>
+                                    <h2><a href="">{{$abon->title}}</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$700.00</ins> <del>$800.00</del>
+                                        <ins>{{$abon->pricenew}}</ins> <del>{{$abon->priceold}}</del>
                                     </div> 
                                 </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="/img/ecommerce/product-2.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Apple new mac book 2015 March :P</a></h2>
-                                    <div class="product-carousel-price">
-                                        <ins>$899.00</ins> <del>$999.00</del>
-                                    </div> 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="/img/ecommerce/product-3.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Apple new i phone 6</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins> <del>$425.00</del>
-                                    </div>                                 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="/img/ecommerce/product-4.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Sony playstation microsoft</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$200.00</ins> <del>$225.00</del>
-                                    </div>                            
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="/img/ecommerce/product-5.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Sony Smart Air Condtion</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$1200.00</ins> <del>$1355.00</del>
-                                    </div>                                 
-                                </div>
-                                <div class="single-product">
-                                    <div class="product-f-image">
-                                        <img src="/img/ecommerce/product-6.jpg" alt="">
-                                        <div class="product-hover">
-                                            <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                            <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
-                                        </div>
-                                    </div>
-
-                                    <h2><a href="">Samsung gallaxy note 4</a></h2>
-
-                                    <div class="product-carousel-price">
-                                        <ins>$400.00</ins>
-                                    </div>                            
-                                </div>                                    
+                             @endforeach    
                             </div>
                         </div>
+
                     </div>                    
                 </div>
             </div>

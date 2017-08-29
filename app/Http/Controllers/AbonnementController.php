@@ -38,8 +38,9 @@ class AbonnementController extends Controller
     public function show($id)
 
     {
-        $abonnement=Abonnement::find($id);
-        return view('vente.single_offer',compact('abonnement'));
+        $abonnements=Abonnement::get();
+        $abons=Abonnement::find($id);
+        return view('vente.single_offer',compact('abonnements','abons'));
     }
 
     /**

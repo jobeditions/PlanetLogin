@@ -13,7 +13,7 @@
                                     <img src={{$abon->image}} alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="{{url('/abonnement/{id}')}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="{{url('/abonnement/{$id}')}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div><!--End of Product-f-Image-->
                                 

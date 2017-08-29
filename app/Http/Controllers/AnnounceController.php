@@ -47,7 +47,9 @@ class AnnounceController extends Controller
      */
     public function show($id)
     {
-        //
+        $announce=Announce::get();
+        $anons=Announce::find($id);
+        return view('vente.announce_offer',compact('announce','anons'));
     }
 
     /**

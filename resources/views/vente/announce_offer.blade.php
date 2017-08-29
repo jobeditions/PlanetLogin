@@ -2,7 +2,7 @@
 
 
     @section('title')
-    Des Abonnements
+    Des Announces
     @endsection
     @section('links')
     @include('partials.vente.links')
@@ -86,14 +86,14 @@
                         <div class="product-breadcroumb">
                             <a href="">Home</a>
                             <a href="">Category Name</a>
-                            <a href="">{{$abons->title}}</a>
+                            <a href="">{{$anons->title}}</a>
                         </div>
                         
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="/{{$abons->image}}" alt="">
+                                        <img src="/{{$anons->image}}" alt="">
                                     </div>
                                     
                                     <div class="product-gallery">
@@ -110,7 +110,7 @@
                                 <div class="product-inner">
                                     <h2 class="product-name"></h2>
                                     <div class="product-inner-price">
-                                        <ins>{{$abons->pricenew}}</ins> <del>{{$abons->priceold}}</del>
+                                        <ins>{{$anons->pricenew}}</ins> <del>{{$anons->priceold}}</del>
                                     </div>    
                                     
                                     <form action="" class="cart">
@@ -131,8 +131,8 @@
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <h2>{{$abons->title}}</h2>  
-                                                <p>{{$abons->description}}</p>
+                                                <h2>{{$anons->title}}</h2>  
+                                                <p>{{$anons->description}}</p>
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
                                                 <h2>Reviews</h2>
@@ -165,21 +165,21 @@
                         <div class="related-products-wrapper">
                             <h2 class="related-products-title">Related Products</h2>
                             <div class="related-products-carousel">
-                            @foreach($abonnements as $abon) 
+                            @foreach($announce as $anon) 
 
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="/{{$abon->image}}" alt="">
+                                        <img src="/{{$anon->image}}" alt="">
                                         <div class="product-hover">
                                             <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="">{{$abon->title}}</a></h2>
+                                    <h2><a href="">{{$anon->title}}</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>{{$abon->pricenew}}</ins> <del>{{$abon->priceold}}</del>
+                                        <ins>{{$anon->pricenew}}</ins> <del>{{$anon->priceold}}</del>
                                     </div> 
                                 </div>
                              @endforeach    

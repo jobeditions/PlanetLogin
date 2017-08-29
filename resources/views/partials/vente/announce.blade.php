@@ -13,7 +13,7 @@
                                     <img src={{$anon->image}} alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="{{route('announces.show',['id'=>$anon->id])}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div><!--End of Product-f-Image-->
                                 

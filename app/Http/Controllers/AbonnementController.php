@@ -40,7 +40,7 @@ class AbonnementController extends Controller
     {
         $abonnements=Abonnement::get();
         $abons=Abonnement::find($id);
-        return view('vente.single_offer',compact('abonnements','abons'));
+        return view('vente.abonnement_offer',compact('abonnements','abons'));
     }
 
     /**

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class announce extends Model
 {
     protected $fillable = [
-        'image', 'title', 'pricenew','priceold'
+        'image','description','title', 'pricenew','priceold'
     ];
 }

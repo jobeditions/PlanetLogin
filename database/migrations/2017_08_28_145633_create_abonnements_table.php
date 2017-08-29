@@ -17,6 +17,7 @@ class CreateAbonnementsTable extends Migration
             $table->increments('id');
             $table->string('image');
             $table->string('title');
+            $table->text('description');
             $table->string('pricenew');
             $table->string('priceold')->nullable();
             $table->timestamps();

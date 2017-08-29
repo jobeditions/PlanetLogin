@@ -7,16 +7,7 @@ use App\Abonnement;
 
 class AbonnementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -46,7 +37,7 @@ class AbonnementController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('vente.singleproduct')
     }
 
     /**

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+App::register('Gloudemans\Shoppingcart\ShoppingcartServiceProvider');
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +20,7 @@ Route::get('/', function () {
 
    Route::get('/home', 'HomeController@index')->name('home');
    Route::get('/utilisateur', 'HomeController@indexUser')->name('homeuser');
+   Route::post('/panier/add/', 'ShopController@addItems')->name('cart.add');
 
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
@@ -31,11 +33,10 @@ Route::get('/', function () {
    Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
    });
    });
-   Route::prefix('/utilisateurs')->group(function(){
+   
    Route::resource('abonnement','AbonnementController', ['except' => ['index']]);
    Route::resource('announces','AnnounceController', ['except' => ['index']]);
-   Route::resource('panier','ShopController', ['except' => ['index']]);
-   });
+   
 
 
  

@@ -37,13 +37,13 @@
                         </form>
                     </div><!--single-sidebar-->
                     
-                    @include('partials.vente.singleoffer_sidebar')
-                    @include('partials.vente.singleoffer_sidebar1')
+                    @include('partials.vente.single_product.singleoffer_sidebar')
+                    @include('partials.vente.single_product.singleoffer_sidebar1')
                     
                 </div><!--row-->
-                @include('partials.vente.single_offer')
+                @include('partials.vente.single_product.single_offer')
                 
-                @include('partials.vente.singleoffer_carousel')        
+                @include('partials.vente.single_product.singleoffer_carousel')        
                         
                  </div><!--product-content-right-->             
                </div><!--col-md-8-->

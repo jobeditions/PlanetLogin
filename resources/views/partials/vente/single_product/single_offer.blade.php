@@ -28,7 +28,7 @@
                                 <div class="product-inner">
                                     <h2 class="product-name"></h2>
                                     <div class="product-inner-price">
-                                        <ins>{{$abons->pricenew}}</ins> <del>{{$abons->priceold}}</del>
+                                        <ins>{{$abons->currency}}{{$abons->pricenew}}</ins> <del>{{$abons->currency}}{{$abons->priceold}}</del>
                                     </div>    
                                     
                                     <form action="{{route('cart.add')}}" class="cart" method="post">

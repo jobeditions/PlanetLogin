@@ -20,7 +20,7 @@
                                 <h2><a href="single-product.html">{{$abon->title}}</a></h2>
                                 
                                 <div class="product-carousel-price">
-                                    <ins>{{$abon->pricenew}}</ins> <del>{{$abon->priceold}}</del>
+                                    <ins>{{$abon->currency}}{{$abon->pricenew}}</ins> <del>{{$abon->currency}}{{$abon->priceold}}</del>
                                 </div> 
                             </div><!--End of Single Product-->
                         @endforeach

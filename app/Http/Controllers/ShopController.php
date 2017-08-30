@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Abonnement;
-use Cart; 
-
+use Gloudemans\Shoppingcart\Facades\Cart;
 class ShopController extends Controller
 {
     public function addItems()
     {
+        //dd(request()->Qty);
        
        $product=Abonnement::find(request()->product_id);
-        //dd(request()->all());
-        $panier = Cart::add($product->id,$product->title,$product->pricenew,request()->Qty);
-
-        dd($panier);
+       
+       //$panier = Cart::add($product->id,$product->title,$product->pricenew,request()->Qty);
+     $panier = Cart::add([
+    'id' => $product->id,
+    'name' => $product->title,
+    'qty' => request()->Qty,
+    'price' => $product->pricenew,
+     ]);
+    
+     dd($panier);   
     
     }
 }

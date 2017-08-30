@@ -14,6 +14,7 @@
         <div class="container">
            @include('partials.vente.announce')
            @include('partials.vente.abonnement')
+           
         </div>
     </div> <!-- End main content area -->
     

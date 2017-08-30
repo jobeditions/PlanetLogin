@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+App::register('Gloudemans\Shoppingcart\ShoppingcartServiceProvider');
+//This is to declare the Laravel Cart API-Do not change this route
 
 Route::get('/', function () {
     return view('welcome');

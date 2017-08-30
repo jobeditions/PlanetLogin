@@ -18,8 +18,9 @@ class CreateAnnouncesTable extends Migration
             $table->string('image');
             $table->string('title');
             $table->text('description');
-            $table->string('pricenew');
-            $table->string('priceold')->nullable();
+            $table->float('pricenew');
+            $table->float('priceold')->nullable();
+            $table->string('currency');
             $table->timestamps();
         });
     }

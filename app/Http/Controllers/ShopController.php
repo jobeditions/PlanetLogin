@@ -17,11 +17,13 @@ class ShopController extends Controller
     'qty' => request()->Qty,
     'price' => $product->pricenew,
      ]);
-     dd($panier);   
+     Cart::associate($panier->rowId, 'App\Abonnement');
+     return redirect()->route('cart.panier');
     }
 
      public function panier()
     {
+        
         return view('vente.panier');
     }
 }

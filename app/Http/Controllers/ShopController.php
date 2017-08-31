@@ -21,9 +21,14 @@ class ShopController extends Controller
      return redirect()->route('cart.panier');
     }
 
-     public function panier()
+    public function panier()
     {
-        
+        //Cart::destroy();
         return view('vente.panier');
+    }
+    public function deleteItems($id)
+    {
+       Cart::remove($id);
+       return redirect()->route('cart.panier');
     }
 }

@@ -93,7 +93,7 @@
                                         @foreach(Cart::content() as $prd)
                                         <tr class="cart_item">
                                             <td class="product-remove">
-                                                <a title="Remove this item" class="remove" href="#">×</a> 
+                                                <a title="Remove this item" class="remove" href="{{route('cart.delete',['id'=>$prd->rowId])}}">×</a> 
                                             </td>
 
                                             <td class="product-thumbnail">

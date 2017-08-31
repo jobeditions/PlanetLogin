@@ -23,6 +23,7 @@ Route::get('/', function () {
    Route::get('/utilisateur', 'HomeController@indexUser')->name('homeuser');
    Route::post('/panier/add/', 'ShopController@addItems')->name('cart.add');
    Route::get('/panier/content/', 'ShopController@panier')->name('cart.panier');
+   Route::get('/panier/delete/{id}/', 'ShopController@deleteItems')->name('cart.delete');
 
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {

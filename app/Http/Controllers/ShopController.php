@@ -18,7 +18,9 @@ class ShopController extends Controller
     'price' => $product->pricenew,
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
-     return redirect()->route('cart.panier');
+     Cart::associate($panier->rowId, 'App\Announce');
+     return redirect()->back();
+     
     }
 
     public function panier()

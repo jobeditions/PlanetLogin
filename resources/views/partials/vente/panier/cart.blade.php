@@ -53,7 +53,7 @@
                                                     <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
                                                 </div>
                                                 <input type="submit" value="Update Cart" name="update_cart" class="button">
-                                                <input type="submit" value="Proceed to Checkout" name="proceed" class="checkout-button button alt wc-forward">
+                                                <input type="button" value="Paiement" class="button" onclick="location.href='{{route('checkout.panier')}}';">
                                             </td>
                                         </tr>
                                     </tbody>

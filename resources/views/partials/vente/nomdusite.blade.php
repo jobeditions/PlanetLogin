@@ -32,7 +32,7 @@
                         <li><a href="shop.html">Shop page</a></li>
                         <li><a href="single-product.html">Single product</a></li>
                         <li><a href="{{route('cart.panier')}}">Panier</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="{{route('checkout.panier')}}">Paiement</a></li>
                         <li><a href="#">Category</a></li>
                         <li><a href="#">Others</a></li>
                         <li><a href="#">Contact</a></li>

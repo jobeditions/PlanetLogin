@@ -31,4 +31,14 @@ class ShopController extends Controller
        Cart::remove($id);
        return redirect()->route('cart.panier');
     }
+    public function increment($id,$qty)
+    {
+       Cart::update($id,$qty + 1);
+       return redirect()->route('cart.panier');
+    }
+    public function decrement($id,$qty)
+    {
+       Cart::update($id,$qty - 1);
+       return redirect()->route('cart.panier');
+    }
 }

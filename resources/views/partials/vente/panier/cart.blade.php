@@ -31,9 +31,11 @@
 
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <input type="button" class="minus" value="-">
-                                                    <input type="number" size="4" class="input-text qty text" title="Qty" value="{{$prd->qty}}" min="0" step="1">
-                                                    <input type="button" class="plus" value="+">
+                                                    
+                                                    <a href="{{route('cart.decrement',['id'=>$prd->rowId,'qty'=>$prd->qty])}}">-</a>
+                                                    <input type="" size="4" class="input-text qty text" title="Qty" value="{{$prd->qty}}">
+                                                    <!--<input type="button" class="plus" value="+" href="{{route('cart.delete',['id'=>$prd->rowId])}}">-->
+                                                    <a href="{{route('cart.increment',['id'=>$prd->rowId,'qty'=>$prd->qty])}}">+</a>
                                                 </div>
                                             </td>
 

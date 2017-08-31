@@ -21,9 +21,14 @@ Route::get('/', function () {
 
    Route::get('/home', 'HomeController@index')->name('home');
    Route::get('/utilisateur', 'HomeController@indexUser')->name('homeuser');
-   Route::post('/panier/add/', 'ShopController@addItems')->name('cart.add');
-   Route::get('/panier/content/', 'ShopController@panier')->name('cart.panier');
-   Route::get('/panier/delete/{id}/', 'ShopController@deleteItems')->name('cart.delete');
+
+   Route::prefix('/panier')->group(function(){
+   Route::post('/add/', 'ShopController@addItems')->name('cart.add');
+   Route::get('/content/', 'ShopController@panier')->name('cart.panier');
+   Route::get('/delete/{id}/', 'ShopController@deleteItems')->name('cart.delete');
+   Route::get('/increment/{id}/{qty}', 'ShopController@increment')->name('cart.increment');
+   Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');
+   });
 
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {

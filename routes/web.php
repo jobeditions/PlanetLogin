@@ -29,8 +29,8 @@ Route::get('/', function () {
    Route::get('/delete/{id}/', 'ShopController@deleteItems')->name('cart.delete');
    Route::get('/increment/{id}/{qty}', 'ShopController@increment')->name('cart.increment');
    Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');
-
    });
+   Route::get('paiement/content/', 'CheckoutController@index')->name('checkout.panier');
 
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {

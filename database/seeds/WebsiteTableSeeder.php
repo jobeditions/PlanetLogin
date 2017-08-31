@@ -11,9 +11,7 @@ class WebsiteTableSeeder extends Seeder
      */
     public function run()
     {
-           $website=App\Website::create([
-            'imageweb' => "img/ecommerce/services_logo__1.jpg",
-           ]);
+          
            $website=App\Website::create([
             'imageweb' => "img/ecommerce/services_logo__2.jpg",
            ]);
@@ -34,6 +32,9 @@ class WebsiteTableSeeder extends Seeder
            ]);
            $website=App\Website::create([
             'imageweb' => "img/ecommerce/services_logo__4.jpg",
+           ]);
+           $website=App\Website::create([
+            'imageweb' => "img/ecommerce/services_logo__1.jpg",
            ]);
 
     }

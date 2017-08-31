@@ -10,11 +10,11 @@
 @endsection
 @section('content')
     <div class="maincontent-area">
+     @include('partials.vente.sites_partner')
         <div class="zigzag-bottom"></div>
         <div class="container">
            @include('partials.vente.announce')
            @include('partials.vente.abonnement')
-           
         </div>
     </div> <!-- End main content area -->
     

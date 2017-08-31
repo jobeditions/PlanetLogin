@@ -25,9 +25,11 @@ Route::get('/', function () {
    Route::prefix('/panier')->group(function(){
    Route::post('/add/', 'ShopController@addItems')->name('cart.add');
    Route::get('/content/', 'ShopController@panier')->name('cart.panier');
+   Route::get('/rapid/{id}', 'ShopController@rapid_add')->name('cart.rapid');
    Route::get('/delete/{id}/', 'ShopController@deleteItems')->name('cart.delete');
    Route::get('/increment/{id}/{qty}', 'ShopController@increment')->name('cart.increment');
    Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');
+
    });
 
    Route::prefix('/admin')->group(function(){

@@ -41,4 +41,19 @@ class ShopController extends Controller
        Cart::update($id,$qty - 1);
        return redirect()->route('cart.panier');
     }
+    public function rapid_add($id)
+    {   
+
+    //dd(request()->Qty);
+     $product=Abonnement::find($id);
+     $panier = Cart::add([
+    'id' => $product->id,
+    'name' => $product->title,
+    'qty' => 1,
+    'price' => $product->pricenew,
+     ]);
+     Cart::associate($panier->rowId, 'App\Abonnement');
+     return redirect()->back();
+       
+    }
 }

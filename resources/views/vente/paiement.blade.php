@@ -25,92 +25,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Search Products</h2>
-                        <form action="">
-                            <input type="text" placeholder="Search products...">
-                            <input type="submit" value="Search">
-                        </form>
-                    </div>
                     
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Products</h2>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
-                            </div>                             
-                        </div>
-                        <div class="thubmnail-recent">
-                            <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                            <div class="product-sidebar-price">
-                                <ins>$700.00</ins> <del>$800.00</del>
-                            </div>                             
-                        </div>
-                    </div>
+                    @include('partials.vente.single_product.singleoffer_sidebar')
+                    @include('partials.vente.single_product.singleoffer_sidebar1')
                     
-                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">Recent Posts</h2>
-                        <ul>
-                            <li><a href="single-product.html">Sony Smart TV - 2015</a></li>
-                            <li><a href="single-product.html">Sony Smart TV - 2015</a></li>
-                            <li><a href="single-product.html">Sony Smart TV - 2015</a></li>
-                            <li><a href="single-product.html">Sony Smart TV - 2015</a></li>
-                            <li><a href="single-product.html">Sony Smart TV - 2015</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    </div><!--row-->    
                 
                 <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <div class="woocommerce-info">Returning customer? <a class="showlogin" data-toggle="collapse" href="#login-form-wrap" aria-expanded="false" aria-controls="login-form-wrap">Click here to login</a>
-                            </div>
-
-                            <form id="login-form-wrap" class="login collapse" method="post">
-
-
-                                <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing &amp; Shipping section.</p>
-
-                                <p class="form-row form-row-first">
-                                    <label for="username">Username or email <span class="required">*</span>
-                                    </label>
-                                    <input type="text" id="username" name="username" class="input-text">
-                                </p>
-                                <p class="form-row form-row-last">
-                                    <label for="password">Password <span class="required">*</span>
-                                    </label>
-                                    <input type="password" id="password" name="password" class="input-text">
-                                </p>
-                                <div class="clear"></div>
-
-
-                                <p class="form-row">
-                                    <input type="submit" value="Login" name="login" class="button">
-                                    <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme" name="rememberme"> Remember me </label>
-                                </p>
-                                <p class="lost_password">
-                                    <a href="#">Lost your password?</a>
-                                </p>
-
-                                <div class="clear"></div>
-                            </form>
+                            
 
                             <div class="woocommerce-info">Have a coupon? <a class="showcoupon" data-toggle="collapse" href="#coupon-collapse-wrap" aria-expanded="false" aria-controls="coupon-collapse-wrap">Click here to enter your code</a>
                             </div>
@@ -444,17 +368,6 @@
                                                 <input type="text" value="" placeholder="" id="billing_phone" name="billing_phone" class="input-text ">
                                             </p>
                                             <div class="clear"></div>
-
-
-                                            <div class="create-account">
-                                                <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
-                                                <p id="account_password_field" class="form-row validate-required">
-                                                    <label class="" for="account_password">Account password <abbr title="required" class="required">*</abbr>
-                                                    </label>
-                                                    <input type="password" value="" placeholder="Password" id="account_password" name="account_password" class="input-text">
-                                                </p>
-                                                <div class="clear"></div>
-                                            </div>
 
                                         </div>
                                     </div>
@@ -794,18 +707,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        
+                                         @foreach(Cart::content() as $prd)
+
                                             <tr class="cart_item">
                                                 <td class="product-name">
-                                                    Ship Your Idea <strong class="product-quantity">× 1</strong> </td>
+                                                    {{$prd->name}}<strong class="product-quantity"> x{{$prd->qty}}</strong> </td>
                                                 <td class="product-total">
-                                                    <span class="amount">£15.00</span> </td>
+                                                    <span class="amount">{{$prd->price}}</span> </td>
                                             </tr>
+                                         @endforeach
+
                                         </tbody>
                                         <tfoot>
 
                                             <tr class="cart-subtotal">
                                                 <th>Cart Subtotal</th>
-                                                <td><span class="amount">£15.00</span>
+                                                <td><span class="amount">{{Cart::subtotal()}}</span>
                                                 </td>
                                             </tr>
 
@@ -821,9 +739,9 @@
 
                                             <tr class="order-total">
                                                 <th>Order Total</th>
-                                                <td><strong><span class="amount">£15.00</span></strong> </td>
+                                                <td><strong><span class="amount">{{Cart::total()}}</span></strong> </td>
                                             </tr>
-
+                    
                                         </tfoot>
                                     </table>
 

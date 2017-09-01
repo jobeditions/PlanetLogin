@@ -41,7 +41,7 @@
                     @include('partials.vente.single_product.singleoffer_sidebar1')
                     
                 </div><!--row-->
-                @include('partials.vente.single_product.single_offer')
+                @include('partials.vente.single_product.single_announce')
                 
                 @include('partials.vente.single_product.singleoffer_carousel')        
                         

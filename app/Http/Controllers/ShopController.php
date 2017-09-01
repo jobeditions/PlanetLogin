@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Abonnement;
+use App\Announce;
 use Gloudemans\Shoppingcart\Facades\Cart;
 class ShopController extends Controller
 {
-    public function addItems()
+    public function addAbonnement()
     {
         //dd(request()->Qty);
      $product=Abonnement::find(request()->product_id);
@@ -18,10 +19,23 @@ class ShopController extends Controller
     'price' => $product->pricenew,
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
-     Cart::associate($panier->rowId, 'App\Announce');
      return redirect()->back();
      
     }
+
+     public function addAnnounce()
+     {
+        //dd(request()->Qty);
+     $produit=Announce::find(request()->product_id);
+     $pan = Cart::add([
+     'id' => $produit->id,
+     'name' => $produit->title,
+     'qty' => request()->Qty,
+     'price' => $produit->pricenew,
+     ]);
+     Cart::associate($pan->rowId, 'App\Announce');
+     return redirect()->back();
+     }
 
     public function panier()
     {
@@ -43,7 +57,7 @@ class ShopController extends Controller
        Cart::update($id,$qty - 1);
        return redirect()->route('cart.panier');
     }
-    public function rapid_add($id)
+    public function rapid_abonnement($id)
     {   
 
     //dd(request()->Qty);
@@ -55,7 +69,19 @@ class ShopController extends Controller
     'price' => $product->pricenew,
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
-     Cart::associate($panier->rowId, 'App\Announce');
+     return redirect()->back();
+    }
+    public function rapid_announce($id)
+    {   
+     //dd(request()->Qty);
+     $produit=Announce::find($id);
+     $pan = Cart::add([
+    'id' => $produit->id,
+    'name' => $produit->title,
+    'qty' => 1,
+    'price' => $produit->pricenew,
+     ]);
+     Cart::associate($pan->rowId, 'App\Announce');
      return redirect()->back();
        
     }

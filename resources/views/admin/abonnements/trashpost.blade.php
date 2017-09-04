@@ -45,7 +45,7 @@
                                  <td></td>
                                  <td>
                                   <!--<div class="btn-group">-->
-                                      <form  class="form-group " action="{{'/restore/'.$abon->id}}" method="POST">
+                                      <form  class="form-group " action="{{action('AbonnementController@restoretrash',['id'=>$abon->id])}}" method="POST">
                                       {{csrf_field()}}
                                       {{method_field('DELETE')}}
                                       <button class="btn btn-success" type="submit"><i class="icon_check"></i> Restaurer</button>

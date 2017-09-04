@@ -164,4 +164,12 @@ class AbonnementController extends Controller
          
         return view('admin.abonnements.trashpost',compact('abonnements'));
     }
+
+     public function restoretrash($id)
+    {
+        $abonnement=Abonnement::onlyTrashed()->where('id',$id)->first();
+        $abonnement->restore();
+        Session::flash('success','Article a été restaurer avec succès');
+        return redirect('/abonnements/modification');
+    }
 }

@@ -31,6 +31,13 @@ class AbonnementController extends Controller
 
         return view('admin.abonnements.index',compact('abonnements'));
     }
+    public function index_modify()
+    {
+        $abonn=Abonnement::orderBy('number','asc')->get();
+        $abonn=Abonnement::paginate(6);
+
+        return view('admin.abonnements.index_modify',compact('abonn'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -39,8 +46,7 @@ class AbonnementController extends Controller
     public function create()
     {
         $abonnements=Abonnement::orderBy('number','asc')->get();
-        $abonnements=Abonnement::paginate(6);
-        return view('admin.abonnements.abonnement_create',compact('abonnements'));
+        return view('admin.abonnements.create',compact('abonnements'));
     }
 
     /**
@@ -51,7 +57,50 @@ class AbonnementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd(request()->all());
+
+        $this -> validate($request,[
+          
+          'title' => 'required|max:255',
+          'image' => 'sometimes|image',
+          'description' => 'required',
+          'number' => 'required',
+          'pricenew' => 'required',
+          'priceold' => 'required',
+          'categorie' => 'required',
+          'tags' => 'required',
+          'currency' => 'required',
+           ]);
+
+        /*dd($request->all());*/
+        if($request->hasFile('image'))
+        {
+        $featuredImage = $request->image;
+        $featuredNew = time().$featuredImage->getClientOriginalName();
+        $featuredImage ->move('images/image',$featuredNew);
+        }
+        /*if($request->hasFile('featured')){
+            $image = $request->file('featured');
+            $filename=time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/image' . $filename);
+            $image = save($location);
+
+        }*/
+
+        $abonnements = Abonnement::create([
+            'title' => $request->title,
+            'number' => $request->number,
+            'desciption' => Purifier::clean($request->description),
+            'image' => 'images/image/'.$featuredNew,
+            //'featured'=>$filename,
+            'categorie' => $request->categorie,
+            'tags' => $request->tags,
+            'pricenew' => $request->pricenew,
+            'priceold' => $request->priceold,
+            'currency' => $request->currency,
+        ]);
+
+    return redirect()->back();
     }
 
     /**

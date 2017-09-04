@@ -49,6 +49,7 @@ Route::get('/', function () {
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
    Route::resource('abonnement','AbonnementController', ['except' => ['update']]);
+   Route::get('/abonnements/modification','AbonnementController@index_modify')->name('abonnement.modification');
    Route::resource('announces','AnnounceController', ['except' => ['update']]);
    });
    });

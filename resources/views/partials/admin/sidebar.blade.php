@@ -21,7 +21,7 @@
                       <li><a class="" href="{{action('AbonnementController@index')}}">Liste des Abonnements</a></li>
                        
                           <li><a href="{{action('AbonnementController@create')}}" class="">Ajouter un Abonnement</a></li>                          
-                          <li><a class="" href="{{action('AbonnementController@create')}}">Modifier - Abonnement</a></li>
+                          <li><a class="" href="{{action('AbonnementController@index_modify')}}">Modifier - Abonnement</a></li>
                           <li><a class="" href="{{action('AbonnementController@create')}}">Corbeille</a></li>
                         
                       </ul>

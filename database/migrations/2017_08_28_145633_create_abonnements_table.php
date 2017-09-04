@@ -24,6 +24,7 @@ class CreateAbonnementsTable extends Migration
             $table->float('pricenew');
             $table->float('priceold')->nullable();
             $table->string('currency');
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

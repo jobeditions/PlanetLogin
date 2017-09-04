@@ -1,3 +1,4 @@
+ @extends('layouts.app-admin')
  @section('title')
     Corbeille
     @endsection
@@ -20,6 +21,7 @@
                                  <th><i class="icon_image"></i> Image</th>
                                  <th><i class="icon_document_alt"></i> Titre</th>
                                  <th><i class="icon_tag"></i> Catégorie</th>
+                                 <th><i class="icon_tag"></i> Prix</th>
                                  <th><i class="icon_calendar"></i> Supprimé le</th>
                                  
                                  <th></th>
@@ -33,10 +35,11 @@
                                  
                                  <td>
                                  </td>
-                                 <td><img src="{{$abon->image}}" width="140px" height="90px"/></td>
+                                 <td><img src="/{{$abon->image}}" width="90px" height="90px"/></td>
                                  <td>{{$abon->title}}</td>
                                  <td>{{$abon->categorie}}</td>
-                                 <td>{{$abon->deleted_at->format('F d,Y')}}</td>
+                                 <td>{{$abon->pricenew}}</td>
+                                 <td>{{$abon->deleted_at}}</td>
                                  
                                   
                                  <td></td>
@@ -62,6 +65,7 @@
                            </tbody>
                         </table>
                       </section>
+                   
                   </div>
               </div>
               @endsection

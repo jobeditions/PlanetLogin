@@ -50,6 +50,7 @@ Route::get('/', function () {
    Route::group(['middleware' => 'web'], function () {
    Route::resource('abonnement','AbonnementController', ['except' => ['update']]);
    Route::get('/abonnements/modification','AbonnementController@index_modify')->name('abonnement.modification');
+   Route::get('/abonnements/corbeille','AbonnementController@trash')->name('abonnement.corbeille');
    Route::resource('announces','AnnounceController', ['except' => ['update']]);
    });
    });

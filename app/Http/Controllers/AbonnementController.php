@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Abonnement;
 use Auth;
 use Session;
+use Storage;
+
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class AbonnementController extends Controller
 {
-    
     /**
      * Create a new controller instance.
      *
@@ -154,5 +156,12 @@ class AbonnementController extends Controller
         $abonnements->delete();
         Session::flash('success','Article a été supprimée avec succès');
         return redirect('/admin/abonnement');
+    }
+
+     public function trash()
+    {
+         $abonnements=Abonnement::onlyTrashed()->get();
+         
+        return view('admin.abonnements.trashpost',compact('abonnements'));
     }
 }

@@ -22,7 +22,7 @@
                        
                           <li><a href="{{action('AbonnementController@create')}}" class="">Ajouter un Abonnement</a></li>                          
                           <li><a class="" href="{{action('AbonnementController@index_modify')}}">Modifier - Abonnement</a></li>
-                          <li><a class="" href="{{action('AbonnementController@create')}}">Corbeille</a></li>
+                          <li><a class="" href="{{action('AbonnementController@trash')}}">Corbeille</a></li>
                         
                       </ul>
                   </li>  

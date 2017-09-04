@@ -46,8 +46,12 @@ Route::get('/', function () {
    });
    });
    
-   Route::resource('abonnement','AbonnementController', ['except' => ['index']]);
+   Route::prefix('/admin')->group(function(){
+   Route::group(['middleware' => 'web'], function () {
+   Route::resource('abonnement','AbonnementController', ['except' => ['show']]);
    Route::resource('announces','AnnounceController', ['except' => ['index']]);
+   });
+   });
    
 
 

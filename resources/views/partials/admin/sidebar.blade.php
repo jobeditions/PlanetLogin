@@ -5,40 +5,40 @@
               <ul class="sidebar-menu">                
                   
                   <li class="active">
-                      <a class="" href="/home">
+                      <a class="" href="{{action('HomeController@index')}}">
                           <i class="icon_house_alt"></i>
-                          <span>Tableau de bord</span>
+                          <span>Page d'Accueil</span>
                       </a>
                   </li>
 				       
                 <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
-                          <span>Articles</span>
+                          <span>Abonnements</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                      <li><a class="" href="">Liste des Articles</a></li>
+                      <li><a class="" href="{{action('AbonnementController@index')}}">Liste des Abonnements</a></li>
                        
-                          <li><a href="/articles/create" class="">Ajouter un article</a></li>                          
-                          <li><a class="" href="/articles">Modifier un Article</a></li>
-                          <li><a class="" href="/trash">Corbeille</a></li>
+                          <li><a href="{{action('AbonnementController@create')}}" class="">Ajouter un Abonnement</a></li>                          
+                          <li><a class="" href="{{action('AbonnementController@create')}}">Modifier - Abonnement</a></li>
+                          <li><a class="" href="{{action('AbonnementController@create')}}">Corbeille</a></li>
                         
                       </ul>
                   </li>  
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_tags"></i>
-                          <span>Commentaires</span>
+                          <span>Announces</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                           <li><a class="" href="">Liste des Commentaires</a></li>
-                          <li><a class="" href="/commentaires">Ajouter Commentaire</a></li>
-                          <li><a class="" href="">Modifier Commentaire</a></li>
+                           <li><a class="" href="">Liste des Announces</a></li>
+                          <li><a class="" href="/commentaires">Ajouter un Announce</a></li>
+                          <li><a class="" href="">Modifier un Announce</a></li>
                           
                         
-                          <li><a class="" href=""> Modérer Commentaire</a></li>
+                          <li><a class="" href=""> Corbeille</a></li>
                         
                       </ul>
                   

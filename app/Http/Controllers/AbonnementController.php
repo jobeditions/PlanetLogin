@@ -4,11 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Abonnement;
+use Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class AbonnementController extends Controller
 {
     
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $abonnements=Abonnement::get();
+        return view('admin.abonnements.index',compact('abonnements'));
+    }
     /**
      * Show the form for creating a new resource.
      *

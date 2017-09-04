@@ -10,9 +10,11 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Liste des Announces
-                              
-                          </header>
+                          <b>Ajouter un Announce </b>
+                          
+
+                           <a class="btn btn-primary btn-s pull-right" data-toggle="modal" data-target="#myModal" ><i class="icon_plus_alt2"></i>  Ajouter</a>
+                          </header>   
                           
                           <table class="table table-striped table-advance table-hover">
                            
@@ -56,4 +58,5 @@
                       {{ $announce->links() }}
                   </div>
               </div>
+              @include('partials.admin.modals.modalwin')
               @endsection

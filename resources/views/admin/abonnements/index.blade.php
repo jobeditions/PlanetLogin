@@ -10,10 +10,8 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Liste des Abonnements
-                              
-                          </header>
-                          
+                          <b>Liste des Abonnement </b>
+                          </header>   
                           <table class="table table-striped table-advance table-hover">
                            
                               <thead>
@@ -56,4 +54,5 @@
                       {{ $abonnements->links() }}
                   </div>
               </div>
+              
               @endsection

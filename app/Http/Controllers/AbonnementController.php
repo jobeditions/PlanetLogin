@@ -38,7 +38,9 @@ class AbonnementController extends Controller
      */
     public function create()
     {
-        //
+        $abonnements=Abonnement::orderBy('number','asc')->get();
+        $abonnements=Abonnement::paginate(6);
+        return view('admin.abonnements.abonnement_create',compact('abonnements'));
     }
 
     /**

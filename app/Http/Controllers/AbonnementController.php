@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Abonnement;
 use Auth;
+use Session;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class AbonnementController extends Controller
@@ -125,7 +126,7 @@ class AbonnementController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.abonnements.abonnement_modify');
     }
 
     /**
@@ -148,6 +149,10 @@ class AbonnementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $abonnements=Abonnement::find($id);
+        
+        $abonnements->delete();
+        Session::flash('success','Article a été supprimée avec succès');
+        return redirect('/admin/abonnement');
     }
 }

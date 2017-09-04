@@ -170,6 +170,15 @@ class AbonnementController extends Controller
         $abonnement=Abonnement::onlyTrashed()->where('id',$id)->first();
         $abonnement->restore();
         Session::flash('success','Article a été restaurer avec succès');
-        return redirect('/abonnements/modification');
+        return redirect()->back();
+    }
+
+      public function kill($id)
+    {
+        $abonnements=Abonnement::onlyTrashed()->where('id',$id)->first();
+        Storage::delete($abonnements->image);
+        $abonnements->forcedelete();
+        Session::flash('success','Article a été supprimée avec succès');
+        return redirect()->back();
     }
 }

@@ -51,7 +51,7 @@
                                       <button class="btn btn-success" type="submit"><i class="icon_check"></i> Restaurer</button>
                                       </form>
                                       <!--<a class="btn btn-success btn-s" href="#"><i class="icon_check_alt2"></i></a>-->
-                                      <form  class="form-group" action="{{'/trash/'.$abon->id}}" method="POST">
+                                      <form  class="form-group" action="{{action('AbonnementController@kill',['id'=>$abon->id])}}" method="POST">
                                       {{csrf_field()}}
                                       {{method_field('DELETE')}}
                                       <button class="btn btn-danger" type="submit"><i class="icon_trash"></i> Supprimer</button>

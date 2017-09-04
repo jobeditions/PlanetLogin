@@ -33,8 +33,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                           <li><a class="" href="">Liste des Announces</a></li>
-                          <li><a class="" href="/commentaires">Ajouter un Announce</a></li>
+                           <li><a class="" href="{{action('AnnounceController@index')}}">Liste des Announces</a></li>
+                          <li><a class="{{action('AbonnementController@create')}}" href="/commentaires">Ajouter un Announce</a></li>
                           <li><a class="" href="">Modifier un Announce</a></li>
                           
                         

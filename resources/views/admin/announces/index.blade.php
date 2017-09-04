@@ -1,7 +1,7 @@
 @extends('layouts.app-admin')
 
     @section('title')
-    Liste des Abonnements
+    Liste des Announces
     @endsection
 
 	  @section('content')
@@ -10,7 +10,7 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Liste des Abonnements
+                              Liste des Announces
                               
                           </header>
                           
@@ -30,18 +30,18 @@
                               </thead>
                               <tbody>
                               
-                                @foreach($abonnements as $abon)
+                                @foreach($announce as $anon)
 
                               <tr>
                                  
-                                 <td>{{$abon->id}}</td>
-                                 <td><a href="{{route('abonnement.show',['id'=>$abon->id])}}"><img src="/{{$abon->image}}" width="90px" height="90px"/></a></td>
+                                 <td>{{$anon->id}}</td>
+                                 <td><a href="{{route('announces.show',['id'=>$anon->id])}}"><img src="/{{$anon->image}}" width="90px" height="90px"/></a></td>
                                  
-                                 <td>{{$abon->title}}</td>
+                                 <td>{{$anon->title}}</td>
                                  <td></td>
                                  <td>
                                  </td>
-                                 <td>{{$abon->created_at->format('F d,Y')}}</td>
+                                 <td>{{$anon->created_at->format('F d,Y')}}</td>
                                  <td></td>
                                  
                               </tr>

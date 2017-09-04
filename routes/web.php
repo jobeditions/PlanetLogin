@@ -48,8 +48,8 @@ Route::get('/', function () {
    
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
-   Route::resource('abonnement','AbonnementController', ['except' => ['show']]);
-   Route::resource('announces','AnnounceController', ['except' => ['index']]);
+   Route::resource('abonnement','AbonnementController', ['except' => ['update']]);
+   Route::resource('announces','AnnounceController', ['except' => ['update']]);
    });
    });
    

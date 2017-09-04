@@ -9,6 +9,11 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class AnnounceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,9 @@ class AnnounceController extends Controller
      */
     public function index()
     {
-        //
+      
+        $announce=Announce::get();
+        return view('admin.announces.index',compact('announce'));
     }
 
     /**

@@ -26,7 +26,9 @@ class AbonnementController extends Controller
      */
     public function index()
     {
-        $abonnements=Abonnement::get();
+        $abonnements=Abonnement::orderBy('number','asc')->get();
+        $abonnements=Abonnement::paginate(6);
+
         return view('admin.abonnements.index',compact('abonnements'));
     }
     /**

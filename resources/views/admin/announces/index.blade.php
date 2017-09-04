@@ -53,7 +53,7 @@
                         </table>
 
                       </section>
-                      
+                      {{ $announce->links() }}
                   </div>
               </div>
               @endsection

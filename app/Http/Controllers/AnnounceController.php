@@ -22,7 +22,8 @@ class AnnounceController extends Controller
     public function index()
     {
       
-        $announce=Announce::get();
+        $announce=Announce::orderBy('number','asc')->get();
+        $announce=Announce::paginate(6);
         return view('admin.announces.index',compact('announce'));
     }
 

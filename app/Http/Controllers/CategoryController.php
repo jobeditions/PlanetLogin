@@ -89,4 +89,28 @@ class CategoryController extends Controller
         Session::flash('success','La catégorie a été supprimée avec succès');
         return redirect()->back();
     }
+
+    public function trash()
+    {
+         $cat=Category::onlyTrashed()->get();
+         
+        return view('admin.category.trashcategory',compact('cat'));
+    }
+    public function restoretrash($id)
+    {
+        $cat=Category::onlyTrashed()->where('id',$id)->first();
+        $cat->restore();
+        Session::flash('success','La catégorie a été restaurer avec succès');
+        return redirect()->back();
+    }
+
+
+    public function kill($id)
+    {
+        $cat=Category::onlyTrashed()->where('id',$id)->first();
+        $cat->forcedelete();
+        Session::flash('success','La catégorie a été supprimée avec succès');
+        return redirect()->back();
+    }
+
 }

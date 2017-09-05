@@ -10,6 +10,7 @@ use Carbon\Carbon;
 class Category extends Model
 {
     use SoftDeletes;
+
 	protected $fillable = [
         'name','title', 'order',
       ];
@@ -21,4 +22,5 @@ class Category extends Model
     {
         return $this->hasMany('App\Announce');
     }
+    protected $dates = ['deleted_at'];
 }

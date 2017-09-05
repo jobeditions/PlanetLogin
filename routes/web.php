@@ -55,6 +55,9 @@ Route::get('/', function () {
    Route::delete('/abonnements/kill/{id}','AbonnementController@kill')->name('abonnement.kill');
    Route::resource('announces','AnnounceController');
    Route::resource('categories','CategoryController',['except' => ['create','show']]);
+   Route::get('/categorie/corbeille','CategoryController@trash')->name('categorie.corbeille');
+   Route::delete('/categorie/restaurer/{id}','CategoryController@restoretrash')->name('categorie.restore');
+   Route::delete('/categorie/kill/{id}','CategoryController@kill')->name('categorie.kill');
    });
    });
    

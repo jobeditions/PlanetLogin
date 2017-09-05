@@ -53,6 +53,7 @@
                       <ul class="sub">
                           
                           <li><a class="" href="{{action('CategoryController@index')}}">Modifier une catégorie</a></li>
+                          <li><a class="" href="{{action('CategoryController@trash')}}">Corbeille</a></li>
                          
                       </ul>
                   </li>

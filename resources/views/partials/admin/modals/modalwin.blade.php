@@ -9,7 +9,7 @@
         <h4 class="modal-title">Ajouter une Catégorie</h4>
       </div>
 
-      <div class="modal-body">
+       <div class="modal-body">
         <form action="{{action('CategoryController@store')}}" method="POST" class="form-horizontal" >
            {{csrf_field()}}
            <div class="col-sm-12">
@@ -20,19 +20,17 @@
            <div class="col-sm-12">
            <label class="control-label col-sm-1" for="order">Ordre</label>
            <input class="form-control" type="number" id="order" name="order">
+           </br></br>
            </div>
-        
-
-
-      
+            
            <div class="form-group">
-           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-           <button type="submit" class="btn btn-primary">Soumettre</button>
+           <button type="submit" class="btn btn-primary pull-right">Soumettre</button>
            </div>
 
        </form>
-    </div><!--modal-body-->
+       
+     </div><!--modal-body-->
 
-  </div><!--modal-content-->
+    </div><!--modal-content-->
   </div><!--modal-dialog-->
 </div><!--modal-fade>

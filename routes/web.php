@@ -48,12 +48,14 @@ Route::get('/', function () {
    
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
-   Route::resource('abonnement','AbonnementController', ['except' => ['update']]);
+   Route::resource('abonnement','AbonnementController');
    Route::get('/abonnements/modification','AbonnementController@index_modify')->name('abonnement.modification');
    Route::get('/abonnements/corbeille','AbonnementController@trash')->name('abonnement.corbeille');
    Route::delete('/abonnements/restaurer/{id}','AbonnementController@restoretrash')->name('abonnement.restore');
    Route::delete('/abonnements/kill/{id}','AbonnementController@kill')->name('abonnement.kill');
-   Route::resource('announces','AnnounceController', ['except' => ['update']]);
+   //Route::resource('announces','AnnounceController', ['except' => ['update']]);
+   Route::resource('announces','AnnounceController');
+   Route::resource('categories','CategoryController');
    });
    });
    

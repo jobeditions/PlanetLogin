@@ -52,7 +52,7 @@
                       </a>
                       <ul class="sub">
                           
-                          <li><a class="" href="/categorie">Ajouter une catégorie</a></li>
+                          <li><a class="" href="{{action('CategoryController@index')}}">Ajouter une catégorie</a></li>
                          
                       </ul>
                   </li>

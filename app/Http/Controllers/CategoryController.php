@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoryController extends Controller
 {
+    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        
+        $cat=Category::orderby('order','asc')->get();
+        $cat=Category::paginate(7);
+        return view('admin.category.indexcategory',compact('cat'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Session;
 
 class CategoryController extends Controller
 {
@@ -48,7 +49,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this -> validate($request,[
+        'name' => 'required|max:255',
+        'order' => 'required',
+        ]);
+
+        $cat = new Category;
+        $cat->name = $request->name;
+        $cat->order = $request->order;
+        $cat->slug = str_slug($request->name);
+        $cat->save();
+        Session::flash('success','Vous avez créé la catégorie avec succès');
+        return redirect()->back();
     }
 
     /**

@@ -64,7 +64,9 @@
                                  @else
                                   <div class="btn-group">
                                   <div class="btn-group">
-                                      <a class="btn btn-primary btn-s" href="{{'/categorie/'.$categ->id.'/edit'}}"><i class="icon_plus_alt2"></i>  Modifier</a>
+                                      <a class="btn btn-primary btn-s" href="{{action('CategoryController@edit',['id'=>$categ->id])}}"><i class="icon_plus_alt2"></i>  Modifier</a>
+                                      
+
                                       <form  class="form-group pull-left" action="{{action('CategoryController@destroy',['id'=>$categ->id])}}" method="POST">
                                       {{csrf_field()}}
                                       {{method_field('DELETE')}}

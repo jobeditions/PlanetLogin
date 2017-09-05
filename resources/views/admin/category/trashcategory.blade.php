@@ -1,6 +1,6 @@
 @extends('layouts.app-admin')
 @section('title')
- Liste des Categories
+ Corbeille des Categories
 @endsection
 
 	  @section('content')
@@ -13,10 +13,7 @@
 
                              
                           <header class="panel-heading">
-                          <b>Ajouter une catégorie </b>
-                          
-
-                           <a class="btn btn-primary btn-s pull-right" data-toggle="modal" data-target="#myModal" ><i class="icon_plus_alt2"></i>  Ajouter</a>
+                          <b>Liste des catégories supprimées </b>
                           </header>   
                       </section>
 

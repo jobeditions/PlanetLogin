@@ -61,7 +61,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat = Category::find($id);
+        return view('admin.category.modifycategory',compact('cat'));
     }
 
     /**
@@ -73,7 +74,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+         $this -> validate($request,[
+        'name' => 'required|max:255',
+        'order' => 'required',
+        ]);
+
+        $cat=Category::find($id);
+        $cat->name = $request->name;
+        $cat->order = $request->order;
+        $cat->slug = str_slug($request->name);
+        $cat->save();
+        Session::flash('success','Vous avez modifiée la catégorie avec succès');
+        return redirect()->back();
+        
     }
 
     /**

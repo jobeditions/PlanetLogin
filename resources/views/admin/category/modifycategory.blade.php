@@ -8,7 +8,7 @@
 	                       <div class="col-lg-12"> 
                            
                               <section class="panel panel-default">
-
+                                  @include('partials.error')
                              
                                   <header class="panel-heading">
                                      Modifier la catégorie:{{ $cat->name }}

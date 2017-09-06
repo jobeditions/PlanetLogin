@@ -10,7 +10,7 @@
                 
                          
                         <section class="panel panel-default">
-
+                          @include('partials.error')
                              
                           <header class="panel-heading">
                           <b>Ajouter une catégorie </b>
@@ -76,15 +76,15 @@
                                   @endif
                                   </td>
                               </tr>
-                             
+                                 
                               @endforeach
-                                                     
+                                                 
                            </tbody>
                         </table>
                         {{$cat->links()}}
+
                       </section>
                   </div>
               </div>
-              
               @include('partials.admin.modals.modalwin')
               @endsection

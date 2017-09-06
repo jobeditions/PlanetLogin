@@ -37,8 +37,7 @@
                                  <th><i class="icon_tag"></i> Catégorie</th>
                                  <th><i class="icon_tags"></i> Slug</th>
                                  <th><i class="icon_calendar"></i> Créé le</th>
-                                 
-                                 
+                                 <th><i class="icon_cogs"></i> Action</a></th>
                                  <th><i class="icon_cogs"></i> Action</a></th>
                               </thead>
                               <tbody>
@@ -61,6 +60,8 @@
                                       {{method_field('DELETE')}}
                                       <button class="btn btn-success" type="submit"><i class="icon_check"></i> Restaurer</button>
                                       </form>
+                                 </td>
+                                 <td>
                                       <!--<a class="btn btn-success btn-s" href="#"><i class="icon_check_alt2"></i></a>-->
                                       <form  class="form-group" action="{{action('CategoryController@kill',['id'=>$categ->id])}}" method="POST">
                                       {{csrf_field()}}

@@ -76,7 +76,7 @@
                                   @endif
                                   </td>
                               </tr>
-                                 
+                              
                               @endforeach
                                                  
                            </tbody>
@@ -86,5 +86,5 @@
                       </section>
                   </div>
               </div>
-              @include('partials.admin.modals.modalwin')
+              @include('admin.category.modals.modalcreate')
               @endsection

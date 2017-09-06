@@ -54,12 +54,6 @@ class AnnounceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $abonnements=Announce::get();
-        $abons=Announce::find($id);
-        return view('vente.announce_offer',compact('abonnements','abons'));
-    }
 
     /**
      * Show the form for editing the specified resource.

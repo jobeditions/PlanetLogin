@@ -53,7 +53,7 @@
                                                     <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
                                                 </div>
                                                 <input type="submit" value="Update Cart" name="update_cart" class="button">
-                                                <input type="button" value="Paiement" class="button" onclick="location.href='{{route('checkout.panier')}}';">
+                                                <input type="button" value="Paiement" class="plus" onclick="location.href='{{route('checkout.panier')}}';">
                                             </td>
                                         </tr>
                                     </tbody>

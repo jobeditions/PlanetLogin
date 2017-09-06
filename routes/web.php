@@ -33,7 +33,11 @@ Route::get('/', function () {
    Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');
    });
    Route::get('paiement/content/', 'CheckoutController@index')->name('checkout.panier');
-
+   Route::get('articles/content/{id}', 'PageController@show')->name('articles.show');
+   Route::get('articlesann/content/{id}', 'PageController@ann_show')->name('articles_ann.show');
+   
+   
+   //Controllers accessible only to Admins
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -46,14 +50,16 @@ Route::get('/', function () {
    });
    });
    
+   //Controllers accessible only to Admins
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
-   Route::resource('abonnement','AbonnementController');
+   Route::resource('abonnement','AbonnementController',['except' => ['show']]);
    Route::get('/abonnements/modification','AbonnementController@index_modify')->name('abonnement.modification');
    Route::get('/abonnements/corbeille','AbonnementController@trash')->name('abonnement.corbeille');
    Route::delete('/abonnements/restaurer/{id}','AbonnementController@restoretrash')->name('abonnement.restore');
    Route::delete('/abonnements/kill/{id}','AbonnementController@kill')->name('abonnement.kill');
-   Route::resource('announces','AnnounceController');
+   Route::resource('announces','AnnounceController',['except' => ['show']]);
+   Route::resource('site_web','WebsiteController');
    Route::resource('categories','CategoryController',['except' => ['create','show']]);
    Route::get('/categorie/corbeille','CategoryController@trash')->name('categorie.corbeille');
    Route::delete('/categorie/restaurer/{id}','CategoryController@restoretrash')->name('categorie.restore');

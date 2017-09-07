@@ -9,13 +9,22 @@
   @include('partials.vente.links')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-     $(document).ready(function(){
+      $(document).ready(function(){
       $(".add-to-cart-link").click(function(){
-        //alert('Button hidden');
-        $(this).hide();
+        var pro_id = $('#pro_id').val();
+        var pro_title = $('#pro_title').val();
+        var pro_price = $('#pro_price').val();
+
+        alert(pro_id+","+pro_title+","+pro_price);
+        //$(this).hide();
+        //$.ajax({
+        //method: 'POST',
+        //url: urlAdd,
     });
-});
-          
+    });
+    //});
+
+    
     </script>
 @endsection
 @section('content')
@@ -37,7 +46,14 @@
                                 <div class="product-f-image">
                                     <img src={{$abon->image}} alt="">
                                     <div class="product-hover">
-                                        <a href="{{action('ShopController@rapid_abonnement',['id'=>$abon->id])}}" class="add-to-cart-link" id="yes"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        
+                                        <input type="hidden" id="pro_id" value="{{$abon->id}}"/>
+                                        <input type="hidden" id="pro_title" value="{{$abon->title}}"/>
+                                        <input type="hidden" id="pro_price" value="{{$abon->pricenew}}"/>
+                                        
+                                        <a  type="submit" class="add-to-cart-link" id="yes"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        
+                                    
                                         <a href="{{action('PageController@show',['id'=>$abon->id])}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
 
                                     </div>

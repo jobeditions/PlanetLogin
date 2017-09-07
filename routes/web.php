@@ -26,8 +26,8 @@ Route::get('/', function () {
    Route::post('/add/abonnement', 'ShopController@addAbonnement')->name('cart.add');
    Route::post('/add/', 'ShopController@addAnnounce')->name('cart.announce');
    Route::get('/content/', 'ShopController@panier')->name('cart.panier');
-   Route::get('/rapid/{id}', 'ShopController@rapid_abonnement')->name('cart.rapid');
-   Route::get('/rapidadd/{id}', 'ShopController@rapid_announce')->name('cart.rapidannounce');
+   Route::post('/rapid', 'ShopController@rapid_abonnement')->name('cart.rapid');
+   Route::get('/rapidadd/', 'ShopController@rapid_announce')->name('cart.rapidannounce');
    Route::get('/delete/{id}/', 'ShopController@deleteItems')->name('cart.delete');
    Route::get('/increment/{id}/{qty}', 'ShopController@increment')->name('cart.increment');
    Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');

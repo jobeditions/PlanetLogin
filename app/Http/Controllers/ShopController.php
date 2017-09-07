@@ -57,16 +57,16 @@ class ShopController extends Controller
        Cart::update($id,$qty - 1);
        return redirect()->route('cart.panier');
     }
-    public function rapid_abonnement($id)
+    public function rapid_abonnement(request $request)
     {   
 
     //dd(request()->Qty);
-     $product=Abonnement::find($id);
+     //$product=Abonnement::find($id);
      $panier = Cart::add([
-    'id' => $product->id,
-    'name' => $product->title,
+    'id' => $request->id,
+    'name' => $request->title,
     'qty' => 1,
-    'price' => $product->pricenew,
+    'price' => $request->pricenew,
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
      return redirect()->back();

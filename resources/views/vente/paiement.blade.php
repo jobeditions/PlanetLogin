@@ -52,7 +52,7 @@
                                 <div class="clear"></div>
                             </form>
 
-                            <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                            <!--<form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
 
                                 <div id="customer_details" class="col2-set">
                                     <div class="col-1">
@@ -694,7 +694,7 @@
 
                                     </div>
 
-                                </div>
+                                </div>-->
 
                                 <h3 id="order_review_heading">Your order</h3>
 
@@ -770,9 +770,43 @@
                                                     <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
                                                 </div>
                                             </li>
+                                             <div class="cheque">
+
+                                             <div class="logos">
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/visa.png" alt="Visa">
+                                               </a>
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/mastercard.png" alt="MasterCard">
+                                               </a>
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/discover.png" alt="DISCOVER">
+                                               </a>
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/amex.png" alt="Amex">
+                                               </a>
+                            
+                                               <span style="float: right;">
+                                                  <form action="{{action('CheckoutController@pay')}}" method="POST">
+                                                  {{csrf_field()}}
+                                                  <script
+                                                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                                  data-key="pk_test_c9cRYt1NOPHvlnNdXejWO7W4"
+                                                  data-amount="999"
+                                                  data-name="Planet-Login"
+                                                  data-description="Votre Paiement"
+                                                  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                                  data-locale="auto"
+                                                  data-zip-code="true">
+                                                  </script>
+                                                  </form>
+                                               </span>
+                                             </div>
+                                             </div>
+
                                         </ul>
 
-                                        <div class="form-row place-order">
+                                        <!--<div class="form-row place-order">
 
                                             <input type="submit" data-value="Place order" value="Place order" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
 
@@ -783,7 +817,7 @@
 
                                     </div>
                                 </div>
-                            </form>
+                            </form>-->
 
                         </div>                       
                     </div>                    

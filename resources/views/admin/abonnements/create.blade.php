@@ -30,43 +30,37 @@
 
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="number">Ordre</label>
-                                                 <input class="form-control" type="number" id="number" name="order">
+                                                 <input class="form-control" type="number" id="number" name="number">
                                               </div>
 
-                                              <div class="col-sm-10">
+                                              <!--<div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="image" >Image</label>
                                                  <input class="form-control" type="file" id="image" name="image">
-                                              </div>
+                                              </div>-->
 
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="categorie" >Catégorie</label>
-                                                 <select class="form-control" id="categorie" name="categorie">
-                                                  <option value="géneral">General</option>
-                                                 </select>
+                                                 <input class="form-control" type="text" id="categorie" name="categorie">
                                               </div>
                                               
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="tags" >Tags</label>
-                                                 <select class="form-control" id="tags" name="tags">
-                                                  <option value="géneral">General</option>
-                                                 </select>
-                                              </div>
-                                              <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="currency" >Currency</label>
-                                                 <select class="form-control" id="currency" name="currency">
-                                                  <option value="Euros">Euros</option>
-                                                  <option value="Dollars">Dollars</option>
-                                                  <option value="Pounds">Pounds</option>
-                                                 </select>
+                                                 <input class="form-control" type="text" id="tags" name="tags">
                                               </div>
 
                                               <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="number">PrixOffert </label>
-                                                 <input class="form-control" type="text" id="number" name="order">
+                                                 <label class="control-label col-sm-1" for="currency" >Currency</label>
+                                                 <input class="form-control" type="text" id="currency" name="currency">
+                                                 
+                                              </div>
+
+                                              <div class="col-sm-10">
+                                                 <label class="control-label col-sm-1" for="pricenew">PrixOffert </label>
+                                                 <input class="form-control" type="text" id="pricenew" name="pricenew">
                                               </div>
                                               <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="number">DerniérèPrix</label>
-                                                 <input class="form-control" type="text" id="number" name="order">
+                                                 <label class="control-label col-sm-1" for="priceold">DerniérèPrix</label>
+                                                 <input class="form-control" type="text" id="priceold" name="priceold">
                                               </div>
 
 

@@ -61,15 +61,16 @@ class ShopController extends Controller
     {   
 
     //dd(request()->Qty);
-     //$product=Abonnement::find($id);
+     $product=Abonnement::find($request->id);
      $panier = Cart::add([
-    'id' => $request->id,
-    'name' => $request->title,
+    'id' => $product->id,
+    'name' => $product->title,
     'qty' => 1,
-    'price' => $request->pricenew,
+    'price' => $product->pricenew,
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
-     return redirect()->back();
+     //return redirect()->back();
+     return response()->json(['shopping-item']);
     }
     public function rapid_announce($id)
     {   

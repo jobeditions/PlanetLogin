@@ -7,8 +7,16 @@ use Cart;
 
 class CheckoutController extends Controller
 {
-     public function index()
+    public function index()
     {
+        //Cart::destroy();
+        return view('vente.paiement');
+    }
+
+    public function pay()
+    {
+        
+        dd(request()->all());
         //Cart::destroy();
         return view('vente.paiement');
     }

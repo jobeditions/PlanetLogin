@@ -60,8 +60,6 @@ class AbonnementController extends Controller
      */
     public function store(Request $request)
     {
-        dd(request()->all());
-
         $this -> validate($request,[
           
           'title' => 'required|max:255',
@@ -75,7 +73,7 @@ class AbonnementController extends Controller
           'currency' => 'required',
            ]);
 
-        /*dd($request->all());*/
+        //dd($request->all());
         if($request->hasFile('image'))
         {
         $featuredImage = $request->image;
@@ -92,9 +90,9 @@ class AbonnementController extends Controller
 
         $abonnements = Abonnement::create([
             'title' => $request->title,
-            'number' => $request->number,
-            'desciption' => Purifier::clean($request->description),
-            'image' => 'images/image/'.$featuredNew,
+            'number' => 20,
+            'desciption' => $request->description,
+            'image' => 'images/image/hello.jpg',
             //'featured'=>$filename,
             'categorie' => $request->categorie,
             'tags' => $request->tags,

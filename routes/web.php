@@ -33,6 +33,7 @@ Route::get('/', function () {
    Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');
    });
    Route::get('paiement/content/', 'CheckoutController@index')->name('checkout.panier');
+   Route::post('paiement/panier/', 'CheckoutController@pay')->name('cart.checkout');
    Route::get('articles/content/{id}', 'PageController@show')->name('articles.show');
    Route::get('articlesann/content/{id}', 'PageController@ann_show')->name('articles_ann.show');
    

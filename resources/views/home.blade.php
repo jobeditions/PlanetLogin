@@ -11,28 +11,24 @@
     <script type="text/javascript">
       $(document).ready(function(){
       $(".add-to-cart-link").click(function(){
-        //var pro_id = $('#pro_id').val();
-        //var pro_title = $('#pro_title').val();
-        //var pro_price = $('#pro_price').val();
-
         //alert(pro_id+","+pro_title+","+pro_price);
         //$(this).hide();
-            $.ajax({
-            method: 'POST',
-            url: urlRapid,
-            data: {id: $('#pro_id').val(),title: $('#pro_title').val(),pricenew: $('#pro_price').val(), _token: token}
+        $.ajax({
+        method: 'POST',
+        url: urlRapid,
+        data: {id: $('#pro_id').val(), _token: token}
         })
         .done(function (data) {
           // $(postBodyElement).text(data['new_body']);
-            //$('.target2').text(data['new_body']);
+            $('.cart-amunt').text(data['new_body']);
 
            // $('#myModal').modal('hide');
         });
     });
     });
     //});
-var token = '{{ Session::token() }}';
-var urlRapid = '{{ url('/panier/rapid')}}';
+    var token = '{{ Session::token() }}';
+    var urlRapid = '{{ url('/panier/rapid')}}';
     
     </script>
 @endsection
@@ -55,13 +51,12 @@ var urlRapid = '{{ url('/panier/rapid')}}';
                                 <div class="product-f-image">
                                     <img src={{$abon->image}} alt="">
                                     <div class="product-hover">
+                                       
                                         <div class="dummy">
                                         {{csrf_field()}}
                                         <input type="hidden" id="pro_id" value="{{$abon->id}}"/>
-                                        <input type="hidden" id="pro_title" value="{{$abon->title}}"/>
-                                        <input type="hidden" id="pro_price" value="{{$abon->pricenew}}"/>
                                 
-                                        <a  type="submit" class="add-to-cart-link" id="yes"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a  type="" class="add-to-cart-link" id="yes"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         </div>
                                     
                                         <a href="{{action('PageController@show',['id'=>$abon->id])}}" class="view-details-link"><i class="fa fa-link"></i> See details</a>

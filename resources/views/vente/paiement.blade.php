@@ -792,7 +792,7 @@
                                                   <script
                                                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                                   data-key="pk_test_c9cRYt1NOPHvlnNdXejWO7W4"
-                                                  data-amount="999"
+                                                  data-amount="{{Cart::total()*100}}"
                                                   data-name="Planet-Login"
                                                   data-description="Votre Paiement"
                                                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

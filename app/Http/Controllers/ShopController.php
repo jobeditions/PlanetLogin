@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 use App\Abonnement;
 use App\Announce;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -19,6 +20,7 @@ class ShopController extends Controller
     'price' => $product->pricenew,
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
+     Session::flash('success', 'Le produit est ajouté avec succès au panier');
      return redirect()->back();
      
     }
@@ -34,6 +36,7 @@ class ShopController extends Controller
      'price' => $produit->pricenew,
      ]);
      Cart::associate($pan->rowId, 'App\Announce');
+     Session::flash('success', 'Le produit est ajouté avec succès au panier');
      return redirect()->back();
      }
 
@@ -45,17 +48,20 @@ class ShopController extends Controller
     public function deleteItems($id)
     {
        Cart::remove($id);
+       Session::flash('success', 'Le produit est supprimée avec succès au panier');
        return redirect()->route('cart.panier');
     }
     public function increment($id,$qty)
     {
        Cart::update($id,$qty + 1);
+       Session::flash('success', 'Le panier est mis à jour avec succès');
        return redirect()->route('cart.panier');
     }
     public function decrement($id,$qty)
     {
        Cart::update($id,$qty - 1);
-       return redirect()->route('cart.panier');
+       Session::flash('success', 'Le panier est mis à jour avec succès');
+       return redirect()->back();
     }
     public function rapid_abonnement(request $request)
     {   
@@ -70,6 +76,7 @@ class ShopController extends Controller
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
      //return redirect()->back();
+     Session::flash('success', 'Le produit est ajouté avec succès au panier');
      return response()->json(['shopping-item']);
     }
     public function rapid_announce($id)
@@ -83,6 +90,7 @@ class ShopController extends Controller
     'price' => $produit->pricenew,
      ]);
      Cart::associate($pan->rowId, 'App\Announce');
+     Session::flash('success', 'Le produit est ajouté avec succès au panier');
      return redirect()->back();
        
     }

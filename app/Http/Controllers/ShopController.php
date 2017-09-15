@@ -60,7 +60,11 @@ class ShopController extends Controller
     public function decrement($id,$qty)
     {
        Cart::update($id,$qty - 1);
+       if($qty==1)
+       Session::flash('success', 'Le produit est supprimée avec succès au panier');
+       else
        Session::flash('success', 'Le panier est mis à jour avec succès');
+       
        return redirect()->back();
     }
     public function rapid_abonnement(request $request)

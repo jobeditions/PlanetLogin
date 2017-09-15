@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
 use Cart;
 use Session;
 use Stripe\Charge;
@@ -30,8 +31,8 @@ class CheckoutController extends Controller
         ]);
         Session::flash('success', 'Purchase successfull. wait for our email.');
         Cart::destroy();
-        //Mail::to(request()->stripeEmail)->send(new \App\Mail\PurchaseSuccessful);
-        return redirect('/');
+        Mail::to(request()->stripeEmail)->send(new \App\Mail\PurchaseSuccessful);
+        return redirect()->back();
         
     }
 }

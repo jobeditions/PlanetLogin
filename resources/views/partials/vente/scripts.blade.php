@@ -13,3 +13,4 @@
     
     <!-- Main Script -->
     <script src="/js/ecommerce/main.js"></script>
+    <script src="/js/toastr.min.js"></script>

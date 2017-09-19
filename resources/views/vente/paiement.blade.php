@@ -787,13 +787,17 @@
                                                </a>
                                             </div>
                                                </br>
+
+                                               <!--This form was used for Stripe Checkout-->
+
+
                                                <!--<span style="float: right;">
-                                                  <form action="{{action('CheckoutController@pay')}}" method="POST">
-                                                  {{csrf_field()}}
+                                                  <form action="" method="POST">
+                                                  
                                                   <script
                                                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                                   data-key="pk_test_c9cRYt1NOPHvlnNdXejWO7W4"
-                                                  data-amount="{{Cart::total()*100}}"
+                                                  data-amount=""
                                                   data-name="Planet-Login"
                                                   data-description="Votre Paiement"
                                                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

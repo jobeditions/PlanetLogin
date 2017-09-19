@@ -771,7 +771,7 @@
                                                 </div>
                                             </li>
                                              <div class="cheque">
-
+                                            
                                              <div class="logos">
                                                <a href="#" class="logos-item">
                                                  <img src="/img/ecommerce/card/visa.png" alt="Visa">
@@ -785,8 +785,9 @@
                                                <a href="#" class="logos-item">
                                                  <img src="/img/ecommerce/card/amex.png" alt="Amex">
                                                </a>
-                            
-                                               <span style="float: right;">
+                                            </div>
+                                               </br>
+                                               <!--<span style="float: right;">
                                                   <form action="{{action('CheckoutController@pay')}}" method="POST">
                                                   {{csrf_field()}}
                                                   <script
@@ -802,7 +803,51 @@
 
                                                   </script>
                                                   </form>
-                                               </span>
+                                               </span>-->
+
+    
+                                               <div class="small-6 small-centered columns">
+                                                   <form action="/checkout_process" method="POST" id="payment-form">
+
+                                                        {{csrf_field()}}
+                                                    <span class="payment-errors"></span>
+
+                                                    <div class="form-row">
+                                                        <label>
+                                                           <span>Votre email</span>
+                                                           <input type="text" size="30" name="email">
+                                                        </label>
+                                                    </div>
+
+
+                                                    <div class="form-row">
+                                                        <label>
+                                                           <span>N° carte bancaire</span>
+                                                           <input type="text" size="20" name="cc_number">
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <label>
+                                                            <span>Expiration (MM/AA)</span>
+                                                            <input type="text" size="2" name="cc_month">
+                                                            <span> / </span>
+                                                            <input type="text" size="2" name="cc_year">
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                         <label>
+                                                             <span>CVC</span>
+                                                             <input type="text" size="4" name="cc_cvc">
+                                                         </label>
+                                                    </div>
+
+
+                                                    <input type="submit" class="submit button success" value="Submit Payment">
+                                                    </form>
+                                             </div>
+   
                                              </div>
                                              </div>
 
@@ -839,6 +884,7 @@
                 toastr.info("{{ Session::get('info') }}")
             @endif
     </script>
+    
     @endsection
     
   </body>

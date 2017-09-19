@@ -27,5 +27,6 @@
                 toastr.info("{{ Session::get('info') }}")
             @endif
     </script>
+
   </body>
 </html>

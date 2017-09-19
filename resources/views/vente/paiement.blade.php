@@ -788,27 +788,6 @@
                                             </div>
                                                </br>
 
-                                               <!--This form was used for Stripe Checkout-->
-
-
-                                               <!--<span style="float: right;">
-                                                  <form action="" method="POST">
-                                                  
-                                                  <script
-                                                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                                  data-key="pk_test_c9cRYt1NOPHvlnNdXejWO7W4"
-                                                  data-amount=""
-                                                  data-name="Planet-Login"
-                                                  data-description="Votre Paiement"
-                                                  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                                  data-locale="auto"
-                                                  data-currency="eur"
-                                                  data-zip-code="true">
-
-                                                  </script>
-                                                  </form>
-                                               </span>-->
-
     
                                                <div class="small-6 small-centered columns">
                                                    <form action="/checkout_process" method="POST" id="payment-form">

@@ -19,26 +19,6 @@ class CheckoutController extends Controller
         return view('vente.paiement');
     }
 
-    //This function was created for Stripe Checkout Payments
-
-    //public function pay()
-    //{
-        
-        
-     //  Stripe::setApiKey("sk_test_akAjq6p4K7SAq9MqtmFvjHLY");
-
-     //   $charge = Charge::create([
-     //       'amount' => Cart::total() * 100,
-     //       'currency' => 'eur',
-     //       'description' => 'vente numerique',
-     //        'source' => request()->stripeToken
-     //   ]);
-     //   Session::flash('success', 'Purchase successfull. wait for our email.');
-     //   Cart::destroy();
-     //   Mail::to(request()->stripeEmail)->send(new \App\Mail\PurchaseSuccessful);
-     //    return redirect()->back();
-        
-    //}
     public function checkout_process(Request $request)
     {
         

@@ -797,7 +797,9 @@
                                                   data-description="Votre Paiement"
                                                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                                   data-locale="auto"
+                                                  data-currency="eur"
                                                   data-zip-code="true">
+
                                                   </script>
                                                   </form>
                                                </span>

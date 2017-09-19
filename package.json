@@ -17,5 +17,20 @@
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
-  }
+  },
+  "dependencies": {},
+  "name": "planetlogin",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jobeditions1@bitbucket.org/liigem/login-planet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/liigem/login-planet#readme",
+  "description": ""
 }

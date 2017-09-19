@@ -9,20 +9,24 @@
   @include('partials.vente.links')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
+      $(document).ready(function(){   
+
       $(".add-to-cart-link").click(function(){
         //alert(pro_id+","+pro_title+","+pro_price);
         //$(this).hide();
+        //var pro_id = $('#pro_id').val();
+        //alert(pro_id);
+        
         $.ajax({
         method: 'POST',
         url: urlRapid,
         data: {id: $('#pro_id').val(), _token: token}
         })
         .done(function (data) {
-          // $(postBodyElement).text(data['new_body']);
-            $('.cart-amunt').text(data['new_body']);
+        // $(postBodyElement).text(data['new_body']);
+        $('.cart-amunt').text(data['new_body']);
 
-           // $('#myModal').modal('hide');
+        // $('#myModal').modal('hide');
         });
     });
     });

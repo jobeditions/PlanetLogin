@@ -21,6 +21,7 @@ class ShopController extends Controller
      ]);
      Cart::associate($panier->rowId, 'App\Abonnement');
      Session::flash('success', 'Le produit est ajouté avec succès au panier');
+    
      return redirect()->back();
      
     }
@@ -37,6 +38,7 @@ class ShopController extends Controller
      ]);
      Cart::associate($pan->rowId, 'App\Announce');
      Session::flash('success', 'Le produit est ajouté avec succès au panier');
+
      return redirect()->back();
      }
 
@@ -48,7 +50,7 @@ class ShopController extends Controller
     public function deleteItems($id)
     {
        Cart::remove($id);
-       Session::flash('success', 'Le produit est supprimée avec succès au panier');
+       //Session::flash('success', 'Le produit est supprimée avec succès au panier');
        return redirect()->route('cart.panier');
     }
     public function increment($id,$qty)

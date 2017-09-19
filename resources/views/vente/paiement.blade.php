@@ -797,7 +797,7 @@
 
                                                     <div class="form-row">
                                                         <label>
-                                                           <span>Votre email</span>
+                                                           <span>Votre email:</span>
                                                            <input type="text" size="30" name="email">
                                                         </label>
                                                     </div>
@@ -805,17 +805,26 @@
 
                                                     <div class="form-row">
                                                         <label>
-                                                           <span>N° carte bancaire</span>
+                                                           <span>N° carte bancaire:</span>
                                                            <input type="text" size="20" name="cc_number">
                                                         </label>
                                                     </div>
 
                                                     <div class="form-row">
                                                         <label>
-                                                            <span>Expiration (MM/AA)</span>
-                                                            <input type="text" size="2" name="cc_month">
+                                                            <span>Expiration (MM/AA):</span>
+                                                            <select name="cc_month">
+                                                            @for ($i=1; $i <= 12; $i++)
+                                                            <option value="{{ $i }}">{{ $i }}</option>
+                                                            @endfor
+                                                            </select>
                                                             <span> / </span>
-                                                            <input type="text" size="2" name="cc_year">
+                                                            <select name="cc_year">
+                                                            {{$year = date('Y')}};
+                                                            @for ($i=$year; $i <= $year+10; $i++)
+                                                            <option value="{{ $i }}">{{ $i }}</option>
+                                                            @endfor
+                                                            </select>
                                                         </label>
                                                     </div>
 

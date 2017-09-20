@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Abonnement;
+use App\Category;
 use Auth;
 use Session;
 use Storage;
@@ -48,8 +49,9 @@ class AbonnementController extends Controller
      */
     public function create()
     {
-        $abonnements=Abonnement::orderBy('number','asc')->get();
-        return view('admin.abonnements.create',compact('abonnements'));
+        //$abonnements=Abonnement::orderBy('number','asc')->get();
+        $categories=Category::all();
+        return view('admin.abonnements.create',compact('categories'));
     }
 
     /**
@@ -66,6 +68,7 @@ class AbonnementController extends Controller
           'featured' => 'sometimes|image',
           'description' => 'required|max:500',
           'number' => 'required',
+          'category_id' => 'required',
           'pricenew' => 'required',
           'priceold' => 'required',
            ]);
@@ -90,6 +93,7 @@ class AbonnementController extends Controller
             'number' => 20,
             'desciption' => $request->description,
             'image' => 'images/image/hello.jpg',
+            'category_id' => $request->category_id,
             'pricenew' => $request->pricenew,
             'priceold' => $request->priceold,
         ]);

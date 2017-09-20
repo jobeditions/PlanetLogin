@@ -37,11 +37,15 @@
                                                  <label class="control-label col-sm-1" for="image" >Image</label>
                                                  <input class="form-control" type="file" id="image" name="featured">
                                               </div>
-
-                                              <!--<div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="categorie" >Catégorie</label>
-                                                 <input class="form-control" type="integer" id="categorie" name="categorie">
-                                              </div>-->                    
+                                              
+                                              <div class="col-sm-10">
+                                                 <label class="control-label col-sm-1" for="category">Category</label>
+                                                  <select name="category_id" id="category" class="form-control">
+                                                    @foreach($categories as $category)
+                                                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                    @endforeach
+                                                  </select>
+                                              </div>                 
 
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="pricenew">PrixOffert </label>

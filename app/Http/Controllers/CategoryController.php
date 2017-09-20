@@ -87,7 +87,7 @@ class CategoryController extends Controller
         $cat->slug = $request->slug;
         $cat->save();
         Session::flash('success','Vous avez modifiée la catégorie avec succès');
-        return redirect()->back();
+        return redirect('/admin/categories');
         
     }
 

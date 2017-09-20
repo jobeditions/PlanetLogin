@@ -11,6 +11,7 @@
                       <section class="panel">
                           <header class="panel-heading">
                           <b>Liste des Abonnement </b>
+
                           </header>   
                           <table class="table table-striped table-advance table-hover">
                            
@@ -55,4 +56,4 @@
                   </div>
               </div>
               
-              @endsection
+         @endsection

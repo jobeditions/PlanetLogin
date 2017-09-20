@@ -54,7 +54,7 @@ Route::get('/', function () {
    //Controllers accessible only to Admins
    Route::prefix('/admin')->group(function(){
    Route::group(['middleware' => 'web'], function () {
-   Route::resource('abonnement','AbonnementController',['except' => ['show']]);
+   Route::resource('abonnement','AbonnementController');
    Route::get('/abonnements/modification','AbonnementController@index_modify')->name('abonnement.modification');
    Route::get('/abonnements/corbeille','AbonnementController@trash')->name('abonnement.corbeille');
    Route::delete('/abonnements/restaurer/{id}','AbonnementController@restoretrash')->name('abonnement.restore');

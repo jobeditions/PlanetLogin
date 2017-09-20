@@ -11,12 +11,12 @@
                          <div class="col-lg-12"> 
                           
                               <section class="panel panel-default">
-                                  @include('partials.error')
+                                  @include('partials.errors.error')
                              
                                   <header class="panel-heading">
                                      Écrire un article 
                                   </header>
-                                  
+
 
                                   <div class="panel-body">
                                       <div class="form">
@@ -33,26 +33,15 @@
                                                  <input class="form-control" type="number" id="number" name="number">
                                               </div>
 
-                                              <!--<div class="col-sm-10">
+                                              <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="image" >Image</label>
-                                                 <input class="form-control" type="file" id="image" name="image">
-                                              </div>-->
+                                                 <input class="form-control" type="file" id="image" name="featured">
+                                              </div>
 
-                                              <div class="col-sm-10">
+                                              <!--<div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="categorie" >Catégorie</label>
-                                                 <input class="form-control" type="text" id="categorie" name="categorie">
-                                              </div>
-                                              
-                                              <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="tags" >Tags</label>
-                                                 <input class="form-control" type="text" id="tags" name="tags">
-                                              </div>
-
-                                              <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="currency" >Currency</label>
-                                                 <input class="form-control" type="text" id="currency" name="currency">
-                                                 
-                                              </div>
+                                                 <input class="form-control" type="integer" id="categorie" name="categorie">
+                                              </div>-->                    
 
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="pricenew">PrixOffert </label>
@@ -67,8 +56,6 @@
                                               <div class="col-sm-10">
                                                   <label class="control-label col-sm-1">TEXTE</label>
                                                   <textarea class="form-control" name="description" rows="6"></textarea>
-                                                  <input class="hidden" type="file" id="upload" name="image">
-                                                  <input class="hidden" type="file" id="upload" name="media">
                                               </div>
 
                                               <div class="col-sm-10"><p></p><p></p></div>

@@ -77,13 +77,14 @@ class CategoryController extends Controller
 
          $this -> validate($request,[
         'name' => 'required|max:255',
+        'slug' => 'required|max:255',
         'order' => 'required',
         ]);
 
         $cat=Category::find($id);
         $cat->name = $request->name;
         $cat->order = $request->order;
-        $cat->slug = str_slug($request->name);
+        $cat->slug = $request->slug;
         $cat->save();
         Session::flash('success','Vous avez modifiée la catégorie avec succès');
         return redirect()->back();

@@ -16,10 +16,9 @@ class CreateAbonnementsTable extends Migration
         Schema::create('abonnements', function (Blueprint $table) {
             $table->increments('id');
             $table->float('number')->default(20);
-            $table->string('image');
+            $table->string('featured');
             $table->string('title');
-            $table->string('categorie');
-            $table->string('tags');
+            $table->integer('category_id');
             $table->text('description');
             $table->float('pricenew');
             $table->float('priceold')->nullable();

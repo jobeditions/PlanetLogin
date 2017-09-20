@@ -10,7 +10,7 @@
                 
                          
                         <section class="panel panel-default">
-                          @include('partials.error')
+                          @include('partials.errors.error')
                              
                           <header class="panel-heading">
                           <b>Ajouter une catégorie </b>

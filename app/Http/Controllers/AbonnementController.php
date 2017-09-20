@@ -63,20 +63,17 @@ class AbonnementController extends Controller
         $this -> validate($request,[
           
           'title' => 'required|max:255',
-          'image' => 'sometimes|image',
-          'description' => 'required',
+          'featured' => 'sometimes|image',
+          'description' => 'required|max:500',
           'number' => 'required',
           'pricenew' => 'required',
           'priceold' => 'required',
-          'categorie' => 'required',
-          'tags' => 'required',
-          'currency' => 'required',
            ]);
 
-        //dd($request->all());
-        if($request->hasFile('image'))
+        dd(request()->all());
+        if($request->hasFile('featured'))
         {
-        $featuredImage = $request->image;
+        $featuredImage = $request->featured;
         $featuredNew = time().$featuredImage->getClientOriginalName();
         $featuredImage ->move('images/image',$featuredNew);
         }
@@ -93,12 +90,8 @@ class AbonnementController extends Controller
             'number' => 20,
             'desciption' => $request->description,
             'image' => 'images/image/hello.jpg',
-            //'featured'=>$filename,
-            'categorie' => $request->categorie,
-            'tags' => $request->tags,
             'pricenew' => $request->pricenew,
             'priceold' => $request->priceold,
-            'currency' => $request->currency,
         ]);
 
     return redirect()->back();

@@ -864,6 +864,7 @@
             </div>
         </div>
     </div>
+
     @endsection
     @section('script')
     @include('partials.vente.scripts')

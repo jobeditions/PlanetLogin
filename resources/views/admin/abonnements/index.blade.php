@@ -39,7 +39,7 @@
                                  
                                  <td>{{$abon->title}}</td>
                                  <td>{{$abon->pricenew}}</td>
-                                 <td>{{$abon->categorie}}</td>
+                                 <td>{{$abon->category->name}}</td>
                                  <td>{{$abon->tags}}</td>
                                  <td>{{$abon->created_at->format('F d,Y')}}</td>
                                  <td></td>

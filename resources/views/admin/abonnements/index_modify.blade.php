@@ -35,10 +35,10 @@
                               <tr>
                                  
                                  <td>{{$abons->number}}</td>
-                                 <td><a href="{{route('abonnement.show',['id'=>$abons->id])}}"><img src="/{{$abons->image}}" width="90px" height="90px"/></a></td>
+                                 <td><a href="{{route('abonnement.show',['id'=>$abons->id])}}"><img src="/{{$abons->featured}}" width="90px" height="90px"/></a></td>
                                  
                                  <td>{{$abons->title}}</td>
-                                 <td>{{$abons->categorie}}</td>
+                                 <td>{{$abons->category->name}}</td>
                                  <td>
                                    {{$abons->tags}}</br>
                                  </td>
@@ -46,7 +46,7 @@
                                  <td></td>
                                  <td>
                                   <!--<div class="btn-group">-->
-                                      <a class="btn btn-primary btn-s" href="{{'admin/abonnement/'.$abons->id.'/edit'}}"><i class="icon_plus_alt2"></i>  Modifier</a>
+                                      <a class="btn btn-primary btn-s" href="{{action('AbonnementController@edit',['id'=>$abons->id])}}"><i class="icon_plus_alt2"></i>  Modifier</a>
                                       <!--<a class="btn btn-success btn-s" href="#"><i class="icon_check_alt2"></i></a>-->
                                       <form  class="form-group pull-left" action="{{action('AbonnementController@destroy',['id'=>$abons->id])}}" method="POST">
                                       {{csrf_field()}}

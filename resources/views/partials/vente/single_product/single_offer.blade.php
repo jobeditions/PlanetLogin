@@ -11,7 +11,7 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        <img src="/{{$abons->image}}" alt="">
+                                        <img src="/{{$abons->featured}}" alt="">
                                     </div><!--product-main-img-->
                                     
                                     <div class="product-gallery">

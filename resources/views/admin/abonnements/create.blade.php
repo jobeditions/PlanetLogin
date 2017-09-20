@@ -64,7 +64,7 @@
 
                                               <div class="col-sm-10">
                                                   <label class="control-label col-sm-1">TEXTE</label>
-                                                  <textarea class="form-control" name="description" rows="6"></textarea>
+                                                  <textarea type="text" class="form-control" name="description" rows="6"></textarea>
                                               </div>
 
                                               <div class="col-sm-10"><p></p><p></p></div>

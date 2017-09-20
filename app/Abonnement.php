@@ -13,8 +13,13 @@ class abonnement extends Model
     
     use SoftDeletes;
     protected $fillable = [
-        'image', 'title', 'description','pricenew','priceold'
+        'featured', 'title','number','category_id', 'description','currency','pricenew','priceold'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
 
     protected $dates = ['deleted_at'];
 }

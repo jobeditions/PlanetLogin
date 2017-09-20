@@ -74,13 +74,12 @@ class AbonnementController extends Controller
           'priceold' => 'required',
            ]);
 
-        dd(request()->all());
-        if($request->hasFile('featured'))
-        {
+       
+        
         $featuredImage = $request->featured;
         $featuredNew = time().$featuredImage->getClientOriginalName();
-        $featuredImage ->move('images/image',$featuredNew);
-        }
+        $featuredImage ->move('uploads/abonnements',$featuredNew);
+    
         /*if($request->hasFile('featured')){
             $image = $request->file('featured');
             $filename=time() . '.' . $image->getClientOriginalExtension();
@@ -88,18 +87,18 @@ class AbonnementController extends Controller
             $image = save($location);
 
         }*/
-
+       // dd($request->description);
         $abonnements = Abonnement::create([
             'title' => $request->title,
             'number' => $request->number,
-            'desciption' => $request->description,
-            'image' => $request->featured,
+            'description' => $request->description,
+            'featured' => 'uploads/abonnements/' . $featuredNew,
             'category_id' => $request->category_id,
-            'currency' => $required->currency,
+            'currency' => $request->currency,
             'pricenew' => $request->pricenew,
             'priceold' => $request->priceold,
         ]);
-
+    Session::flash('success', 'Post created succesfully.');
     return redirect()->back();
     }
 

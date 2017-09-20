@@ -35,7 +35,7 @@
                               <tr>
                                  
                                  <td>{{$abon->number}}</td>
-                                 <td><a href="{{route('abonnement.show',['id'=>$abon->id])}}"><img src="/{{$abon->image}}" width="90px" height="90px"/></a></td>
+                                 <td><a href="{{route('abonnement.show',['id'=>$abon->id])}}"><img src="/{{$abon->featured}}" width="90px" height="90px"/></a></td>
                                  
                                  <td>{{$abon->title}}</td>
                                  <td>{{$abon->pricenew}}</td>

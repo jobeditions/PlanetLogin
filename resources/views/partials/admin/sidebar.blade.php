@@ -64,8 +64,9 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          
-                          <li><a class="" href="/tags">Ajouter une Étiquette</a></li>
+
+                      <li><a class="" href="{{action('TagController@index')}}">Modifier une Étiquette</a></li>
+                      <li><a class="" href="{{action('TagController@trash')}}">Corbeille</a></li> 
                         
                       </ul>
                   </li>

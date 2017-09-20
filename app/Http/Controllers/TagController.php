@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tag;
 
 class TagController extends Controller
 {
@@ -30,11 +31,7 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -49,7 +46,7 @@ class TagController extends Controller
         Tag::create([
             'tag' => $request->tag
         ]);
-        Session::flash('success', 'Tag created successfully.');
+        Session::flash('success', "Vous avez créé l'étiquette avec succès.");
         return redirect()->route('tags');
     }
 
@@ -59,10 +56,6 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -91,7 +84,7 @@ class TagController extends Controller
         $tags = Tag::find($id);
         $tags->tag = $request->tag;
         $tags->save();
-        Session::flash('success', 'Tag updated!');
+        Session::flash('success', "Vous avez modifiée l'étiquette avec succès.");
         return redirect()->back();
     }
 

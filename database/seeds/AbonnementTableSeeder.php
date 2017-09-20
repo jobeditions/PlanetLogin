@@ -13,10 +13,9 @@ class AbonnementTableSeeder extends Seeder
     {
          $abonnement=App\Abonnement::create([
             'number' =>'1',
-            'image' => 'img/ecommerce/product-1.jpg',
+            'featured' => 'img/ecommerce/product-1.jpg',
             'title' => 'Sony Smart TV - 2015',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -28,10 +27,9 @@ class AbonnementTableSeeder extends Seeder
 
          $abonnement=App\Abonnement::create([
             'number' =>'2',
-            'image' => 'img/ecommerce/product-2.jpg',
+            'featured' => 'img/ecommerce/product-2.jpg',
             'title' => 'Apple new mac book 2015 March :P',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -42,10 +40,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
          $abonnement=App\Abonnement::create([
             'number' =>'3',
-            'image' => 'img/ecommerce/product-3.jpg',
+            'featured' => 'img/ecommerce/product-3.jpg',
             'title' => 'Apple new i phone 6',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -56,10 +53,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
          $abonnement=App\Abonnement::create([
             'number' =>'4',
-            'image' => 'img/ecommerce/product-4.jpg',
+            'featured' => 'img/ecommerce/product-4.jpg',
             'title' => 'Sony playstation microsoft',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -70,10 +66,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
          $abonnement=App\Abonnement::create([
             'number' =>'5',
-            'image' => 'img/ecommerce/product-5.jpg',
+            'featured' => 'img/ecommerce/product-5.jpg',
             'title' => 'Sony Smart Air Condtion',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -84,10 +79,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
          $abonnement=App\Abonnement::create([
             'number' =>'6',
-            'image' => 'img/ecommerce/product-6.jpg',
+            'featured' => 'img/ecommerce/product-6.jpg',
             'title' => 'Samsung gallaxy note 4',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -97,10 +91,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
            $abonnement=App\Abonnement::create([
             'number' =>'7',
-            'image' => 'img/ecommerce/product-4.jpg',
+            'featured' => 'img/ecommerce/product-4.jpg',
             'title' => 'Sony playstation microsoft',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -112,10 +105,9 @@ class AbonnementTableSeeder extends Seeder
 
          $abonnement=App\Abonnement::create([
             'number' =>'8',
-            'image' => 'img/ecommerce/product-2.jpg',
+            'featured' => 'img/ecommerce/product-2.jpg',
             'title' => 'Apple new mac book 2015 March :P',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -126,10 +118,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
           $abonnement=App\Abonnement::create([
             'number' =>'9',
-            'image' => 'img/ecommerce/product-3.jpg',
+            'featured' => 'img/ecommerce/product-3.jpg',
             'title' => 'Apple new i phone 6',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 
@@ -140,10 +131,9 @@ class AbonnementTableSeeder extends Seeder
            ]);
          $abonnement=App\Abonnement::create([
             'number' =>'10',
-            'image' => 'img/ecommerce/product-4.jpg',
+            'featured' => 'img/ecommerce/product-4.jpg',
             'title' => 'Sony playstation microsoft',
-            'categorie' => 'général',
-            'tags' => 'général',
+            'category_id' => 1,
             'description' => '
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat  iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.
 

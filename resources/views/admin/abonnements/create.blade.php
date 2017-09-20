@@ -46,7 +46,12 @@
                                                     @endforeach
                                                   </select>
                                               </div>                 
-
+                                              
+                                              <div class="col-sm-10">
+                                                 <label class="control-label col-sm-1" for="currency">Currency </label>
+                                                 <input class="form-control" type="text" id="currency" name="currency">
+                                              </div>
+                                              
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="pricenew">PrixOffert </label>
                                                  <input class="form-control" type="text" id="pricenew" name="pricenew">

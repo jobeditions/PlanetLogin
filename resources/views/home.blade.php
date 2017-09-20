@@ -53,7 +53,7 @@
                         @foreach($abonnement as $abon)
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src={{$abon->image}} alt="">
+                                    <img src={{$abon->featured}} alt="">
                                     <div class="product-hover">
                                        
                                         <div class="dummy">

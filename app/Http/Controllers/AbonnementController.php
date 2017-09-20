@@ -69,6 +69,7 @@ class AbonnementController extends Controller
           'description' => 'required|max:500',
           'number' => 'required',
           'category_id' => 'required',
+          'currency' => 'required',
           'pricenew' => 'required',
           'priceold' => 'required',
            ]);
@@ -90,10 +91,11 @@ class AbonnementController extends Controller
 
         $abonnements = Abonnement::create([
             'title' => $request->title,
-            'number' => 20,
+            'number' => $request->number,
             'desciption' => $request->description,
-            'image' => 'images/image/hello.jpg',
+            'image' => $request->featured,
             'category_id' => $request->category_id,
+            'currency' => $required->currency,
             'pricenew' => $request->pricenew,
             'priceold' => $request->priceold,
         ]);

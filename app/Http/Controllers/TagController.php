@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
+use Session;
 
 class TagController extends Controller
 {
@@ -40,14 +41,18 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'tag' => 'required'
+       $this -> validate($request,[
+        'name' => 'required|max:255',
+        'order' => 'required',
         ]);
-        Tag::create([
-            'tag' => $request->tag
-        ]);
-        Session::flash('success', "Vous avez créé l'étiquette avec succès.");
-        return redirect()->route('tags');
+
+        $tagging = new Tag;
+        $tagging->name = $request->name;
+        $tagging->order = $request->order;
+        $tagging->slug = str_slug($request->name);
+        $tagging->save();
+        Session::flash('success',"Vous avez créé l'étiquette avec succès");
+        return redirect()->back();
     }
 
     /**
@@ -66,7 +71,7 @@ class TagController extends Controller
     public function edit($id)
     {
         $tags = Tag::find($id);
-        return view('admin.tags.modifytags',compact('tags'));
+        return view('admin.tags.modifytag',compact('tags'));
     }
 
     /**
@@ -79,11 +84,15 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, [
-            'tag' => 'required'
+        'name' => 'required|max:255',
+        'order' => 'required',
+        'slug' => 'required',
         ]); 
-        $tags = Tag::find($id);
-        $tags->tag = $request->tag;
-        $tags->save();
+        $tagging = Tag::find($id);
+        $tagging->name = $request->name;
+        $tagging->order = $request->order;
+        $tagging->slug = $request->slug;
+        $tagging->save();
         Session::flash('success', "Vous avez modifiée l'étiquette avec succès.");
         return redirect()->back();
     }

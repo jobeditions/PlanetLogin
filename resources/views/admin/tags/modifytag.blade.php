@@ -17,7 +17,7 @@
 
                                   <div class="panel-body">
                                       <div class="form">
-                                          <form action="/admin/categories/{{$tags->id}}" method="POST" class="form-horizontal">
+                                          <form action="{{action('TagController@update',['id'=>$tags->id])}}" method="POST" class="form-horizontal">
                                           
                                               {{csrf_field()}}
                                               {{method_field('PUT')}}

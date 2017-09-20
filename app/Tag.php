@@ -8,6 +8,9 @@ use Carbon\Carbon;
 
 class Tag extends Model
 {
+    
+    use SoftDeletes;
+    
     protected $fillable = ['name','title', 'order',];
     public function abonnements(){
         return $this->belongsToMany('App\Abonnement');

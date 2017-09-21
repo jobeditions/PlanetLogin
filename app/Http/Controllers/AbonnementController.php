@@ -33,8 +33,9 @@ class AbonnementController extends Controller
     {
         $abonnements=Abonnement::orderBy('number','asc')->get();
         $abonnements=Abonnement::paginate(6);
+        $tags=Tag::all();
 
-        return view('admin.abonnements.index',compact('abonnements'));
+        return view('admin.abonnements.index',compact('abonnements','tags'));
     }
     public function index_modify()
     {
@@ -132,7 +133,10 @@ class AbonnementController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.abonnements.abonnement_modify');
+        $abon = Abonnement::find($id);
+        $categories=Category::all();
+        $tags=Tag::all();
+        return view('admin.abonnements.abonnement_modify',compact('abon','categories','tags'));
     }
 
     /**

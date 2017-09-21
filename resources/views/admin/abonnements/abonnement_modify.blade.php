@@ -22,7 +22,7 @@
                                   @include('partials.errors.error')
                              
                                   <header class="panel-heading">
-                                     Écrire un article 
+                                     Modifier l'abonnement {{$abon->title}} 
                                   </header>
 
 
@@ -32,18 +32,18 @@
                                               {{csrf_field()}}
                                               
                                               <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="title">Titre</label>
-                                                 <input class="form-control" type="text" id="title" name="title">
+                                                <label class="control-label col-sm-1" for="title">Titre</label>
+                                                <input class="form-control" type="text" id="title" name="title" value={{$abon->title}}>
                                               </div>
 
                                               <div class="col-sm-10">
-                                                 <label class="control-label col-sm-1" for="number">Ordre</label>
-                                                 <input class="form-control" type="number" id="number" name="number">
+                                                <label class="control-label col-sm-1" for="number">Ordre</label>
+                                                <input class="form-control" type="number" id="number" name="number" value={{$abon->number}}>
                                               </div>
 
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="image" >Image</label>
-                                                 <input class="form-control" type="file" id="image" name="featured">
+                                                 <input class="form-control" type="file" id="image" name="featured" value={{$abon->featured}}>
                                               </div>
                                               
                                               <div class="col-sm-10">
@@ -53,26 +53,28 @@
                                                       <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                     @endforeach
                                                   </select>
-                                              </div>                 
+                                              </div>
+
+
                                               
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="currency">Currency </label>
-                                                 <input class="form-control" type="text" id="currency" name="currency">
+                                                 <input class="form-control" type="text" id="currency" name="currency" value={{$abon->currency}}>
                                               </div>
                                               
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="pricenew">PrixOffert </label>
-                                                 <input class="form-control" type="text" id="pricenew" name="pricenew">
+                                                 <input class="form-control" type="text" id="pricenew" name="pricenew" value={{$abon->pricenew}}>
                                               </div>
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="priceold">DerniérèPrix</label>
-                                                 <input class="form-control" type="text" id="priceold" name="priceold">
+                                                 <input class="form-control" type="text" id="priceold" name="priceold" value={{$abon->priceold}}>
                                               </div>
 
 
                                               <div class="col-sm-10">
                                                   <label class="control-label col-sm-1">TEXTE</label>
-                                                  <textarea type="text" class="form-control" name="description" rows="6"></textarea>
+                                                  <textarea type="text" class="form-control" name="description" rows="6" value={{$abon->description}}></textarea>
                                               </div>
 
                                               <div class="col-sm-10"><p></p><p></p></div>

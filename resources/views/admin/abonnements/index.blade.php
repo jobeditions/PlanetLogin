@@ -46,7 +46,11 @@
                                  <td>{{$abon->title}}</td>
                                  <td>{{$abon->pricenew}}</td>
                                  <td>{{$abon->category->name}}</td>
-                                 <td></td>
+                                 <td> 
+                                  @foreach($abon->tags as $tango)
+                                  {{$tango->name}}</br>
+                                  @endforeach
+                                 </td>
                                  <td>{{$abon->created_at->format('F d,Y')}}</td>
                                  <td></td>
                                  

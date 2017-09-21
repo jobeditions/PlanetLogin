@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Abonnement;
 use App\Category;
+use App\Tag;
 use Auth;
 use Session;
 use Storage;
@@ -51,7 +52,8 @@ class AbonnementController extends Controller
     {
         //$abonnements=Abonnement::orderBy('number','asc')->get();
         $categories=Category::all();
-        return view('admin.abonnements.create',compact('categories'));
+        $tags=Tag::all();
+        return view('admin.abonnements.create',compact('categories','tags'));
     }
 
     /**
@@ -87,7 +89,7 @@ class AbonnementController extends Controller
             $image = save($location);
 
         }*/
-       // dd($request->description);
+        dd(request()->all());
         $abonnements = Abonnement::create([
             'title' => $request->title,
             'number' => $request->number,

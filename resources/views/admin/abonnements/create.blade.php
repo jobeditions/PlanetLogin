@@ -1,8 +1,18 @@
 @extends('layouts.app-admin')
 
-   
     @section('title')
     Ajouter un Abonnement
+    @endsection
+
+    @section('links')
+     @include('partials.admin.links')
+     
+    <!--<link href="/css/select2.css" rel="stylesheet" />
+     <script src="/js/select2.js"></script>-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+     
     @endsection
 
     @section('content')
@@ -45,17 +55,28 @@
                                                       <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                     @endforeach
                                                   </select>
-                                              </div>                 
-                                              
+                                              </div>
+
+                                              <div class="col-sm-10">
+                                                <label class="control-label col-sm-1" for="tags">Select_tags</label>                                     
+                                                   <select class="form-control select2multi" name="tags[]" multiple="multiple">
+                                                     @foreach($tags as $tag)
+                                                     <option value='{{ $tag->id }}'>{{ $tag->name }}</option>
+                                                     @endforeach
+
+                                                   </select>
+                                              </div>
+
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="currency">Currency </label>
-                                                 <input class="form-control" type="text" id="currency" name="currency">
+                                                 <label><input class="form-control" type="text" id="currency" name="currency"></label>
                                               </div>
                                               
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="pricenew">PrixOffert </label>
                                                  <input class="form-control" type="text" id="pricenew" name="pricenew">
                                               </div>
+
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="priceold">DerniérèPrix</label>
                                                  <input class="form-control" type="text" id="priceold" name="priceold">
@@ -87,3 +108,12 @@
                   </div>
               </div>
               @endsection
+    @section('scripts')
+     @include('partials.admin.scripts')
+
+      <script>
+        $(document).ready(function() {
+        $('.select2multi').select2();
+        });
+      </script>
+    @endsection

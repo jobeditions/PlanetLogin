@@ -1,11 +1,19 @@
 @extends('layouts.app-admin')
 
    
-    @section('title')
-    Ajouter un Abonnement
-    @endsection
+      @section('title')
+        Ajouter un Abonnement
+      @endsection
 
-    @section('content')
+      @section('links')
+         @include('partials.admin.links')   
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+           <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+     
+      @endsection
+
+      @section('content')
       
 
                          <div class="col-lg-12"> 
@@ -86,4 +94,13 @@
                       </div>
                   </div>
               </div>
-              @endsection
+      @endsection
+      @section('scripts')
+        @include('partials.admin.scripts')
+
+        <script>
+          $(document).ready(function() {
+          $('.select2multi').select2();
+          });
+        </script>
+      @endsection

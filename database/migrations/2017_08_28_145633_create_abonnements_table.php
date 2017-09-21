@@ -18,6 +18,7 @@ class CreateAbonnementsTable extends Migration
             $table->float('number');
             $table->string('featured');
             $table->string('title');
+            $table->string('slug');
             $table->integer('category_id');
             $table->text('description');
             $table->float('pricenew');

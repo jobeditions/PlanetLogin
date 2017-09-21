@@ -15,7 +15,7 @@
         <form action="{{action('TagController@store')}}" method="POST" class="form-horizontal" >
            {{csrf_field()}}
            <div class="col-sm-12">
-           <label class="control-label col-sm-1" for="name">Catégorie</label>
+           <label class="control-label col-sm-1" for="name">Étiquette</label>
            <input class="form-control" type="text" id="name" name="name">
            </div>
 

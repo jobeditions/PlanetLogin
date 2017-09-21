@@ -1,9 +1,15 @@
 @extends('layouts.app-admin')
-@section('title')
- Liste des Étiquettes
-@endsection
+   @section('title')
+     Liste des Étiquettes
+   @endsection
 
-	  @section('content')
+   @section('links')
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     @include('partials.admin.links')
+   @endsection
+	  
+
+   @section('content')
 
 
               <div class="col-md-11"> 
@@ -87,4 +93,9 @@
                   </div>
               </div>
               @include('admin.tags.modals.modalcreate')
-              @endsection
+      @endsection
+
+      @section('scripts')
+        @include('partials.admin.scripts')
+      @endsection
+    

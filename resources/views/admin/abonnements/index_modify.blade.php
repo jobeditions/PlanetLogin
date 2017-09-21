@@ -1,7 +1,18 @@
 @extends('layouts.app-admin')
 
-    @section('title')
-    Modifier un Article
+     @section('title')
+       Modifier un Article
+     @endsection
+
+     @section('links')
+     @include('partials.admin.links')
+     
+    <!--<link href="/css/select2.css" rel="stylesheet" />
+     <script src="/js/select2.js"></script>-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+     
     @endsection
 
 	  @section('content')
@@ -66,4 +77,14 @@
                       {{ $abonn->links() }}
                   </div>
               </div>
-              @endsection
+      @endsection
+
+      @section('scripts')
+        @include('partials.admin.scripts')
+
+        <script>
+          $(document).ready(function() {
+          $('.select2multi').select2();
+          });
+        </script>
+      @endsection

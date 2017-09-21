@@ -4,6 +4,11 @@
     Liste des Announces
     @endsection
 
+     @section('links')
+       @include('partials.admin.links')
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     @endsection
+
 	  @section('content')
 
 	             <div class="row">
@@ -58,5 +63,9 @@
                       {{ $announce->links() }}
                   </div>
               </div>
-              @include('partials.admin.modals.modalwin')
-              @endsection
+          @include('partials.admin.modals.modalwin')
+        @endsection
+
+        @section('scripts')
+          @include('partials.admin.scripts')
+        @endsection

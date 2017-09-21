@@ -64,6 +64,8 @@ class AbonnementController extends Controller
      */
     public function store(Request $request)
     {
+      // dd(request()->all()); 
+
         $this -> validate($request,[
           
           'title' => 'required|max:255',
@@ -71,6 +73,7 @@ class AbonnementController extends Controller
           'description' => 'required|max:500',
           'number' => 'required',
           'category_id' => 'required',
+          'tags' => 'required',
           'currency' => 'required',
           'pricenew' => 'required',
           'priceold' => 'required',
@@ -89,9 +92,10 @@ class AbonnementController extends Controller
             $image = save($location);
 
         }*/
-        dd(request()->all());
+        
         $abonnements = Abonnement::create([
             'title' => $request->title,
+            'slug' => str_slug($request->title),
             'number' => $request->number,
             'description' => $request->description,
             'featured' => 'uploads/abonnements/' . $featuredNew,
@@ -100,6 +104,8 @@ class AbonnementController extends Controller
             'pricenew' => $request->pricenew,
             'priceold' => $request->priceold,
         ]);
+
+        $abonnements->tags()->attach($request->tags);
     Session::flash('success', 'Post created succesfully.');
     return redirect()->back();
     }

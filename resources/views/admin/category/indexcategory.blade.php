@@ -1,9 +1,14 @@
 @extends('layouts.app-admin')
-@section('title')
- Liste des Categories
-@endsection
+    @section('title')
+      Liste des Categories
+    @endsection
 
-	  @section('content')
+   @section('links')
+     @include('partials.admin.links')
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   @endsection
+
+   @section('content')
 
 
               <div class="col-md-11"> 
@@ -87,4 +92,8 @@
                   </div>
               </div>
               @include('admin.category.modals.modalcreate')
-              @endsection
+      @endsection
+
+      @section('scripts')
+         @include('partials.admin.scripts')
+      @endsection

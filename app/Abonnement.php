@@ -13,7 +13,7 @@ class abonnement extends Model
     
     use SoftDeletes;
     protected $fillable = [
-        'featured', 'title','number','category_id', 'description','currency','pricenew','priceold'
+        'featured', 'title','slug','number','category_id', 'description','currency','pricenew','priceold'
     ];
 
     public function category()

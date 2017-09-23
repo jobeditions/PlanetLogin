@@ -41,7 +41,7 @@
                                  
                                  <td>
                                  </td>
-                                 <td><img src="/{{$abon->image}}" width="90px" height="90px"/></td>
+                                 <td><img src="/{{$abon->featured}}" width="90px" height="90px"/></td>
                                  <td>{{$abon->title}}</td>
                                  <td>{{$abon->categorie}}</td>
                                  <td>{{$abon->pricenew}}</td>
@@ -78,5 +78,6 @@
               </div>
     @endsection
     @section('scripts')
+      <script src="/js/jquery.js"></script>
       @include('partials.admin.scripts')
     @endsection

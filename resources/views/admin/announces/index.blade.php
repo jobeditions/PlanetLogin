@@ -67,5 +67,6 @@
         @endsection
 
         @section('scripts')
+          <script src="/js/jquery.js"></script>
           @include('partials.admin.scripts')
         @endsection

@@ -129,6 +129,8 @@ class TagController extends Controller
     public function kill($id)
     {
         $tags=Tag::onlyTrashed()->where('id',$id)->first();
+        $tags->abonnements()->detach();
+        
         $tags->forcedelete();
         Session::flash('success',"L'étiquette a été supprimée avec succès");
         return redirect()->back();

@@ -70,7 +70,7 @@ class AbonnementController extends Controller
         $this -> validate($request,[
           
           'title' => 'required|max:255',
-          'featured' => 'sometimes|image',
+          'featured' => 'required|image',
           'description' => 'required|max:500',
           'number' => 'required',
           'category_id' => 'required',
@@ -106,9 +106,9 @@ class AbonnementController extends Controller
             'priceold' => $request->priceold,
         ]);
 
-        $abonnements->tags()->attach($request->tags);
+    $abonnements->tags()->attach($request->tags);
     Session::flash('success', 'Post created succesfully.');
-    return redirect()->back();
+    return redirect(route('abonnement.index'));
     }
 
     /**
@@ -148,7 +148,37 @@ class AbonnementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request, [
+            'title' => 'required',
+            'number' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'featured' => 'sometimes|image',
+            'currency' => 'required',
+            'pricenew' => 'required',
+            'priceold' => 'required',
+        ]);
+        $abon = Abonnement::find($id);
+        if($request->hasFile('featured'))
+        {
+            $featured = $request->featured;
+            $featured_new_name = time() . $featured->getClientOriginalName();
+            $featured->move('uploads/abonnements', $featured_new_name);
+            $abon->featured = 'uploads/abonnements/'.$featured_new_name;
+            
+        }
+        $abon->title = $request->title;
+        $abon->number = $request->number;
+        $abon->slug = str_slug($request->title);
+        $abon->description = $request->description;
+        $abon->category_id = $request->category_id;
+        $abon->currency = $request->currency;
+        $abon->pricenew = $request->pricenew;
+        $abon->priceold = $request->priceold;
+        $abon->save();
+        $abon->tags()->sync($request->tags);
+        Session::flash('success', ' Le produit a été mis e jour avec success.');
+        return redirect(route('abonnement.index')); 
     }
 
     /**
@@ -185,8 +215,9 @@ class AbonnementController extends Controller
     {
         $abonnements=Abonnement::onlyTrashed()->where('id',$id)->first();
         Storage::delete($abonnements->image);
+        $abonnements->tags()->detach();
         $abonnements->forcedelete();
         Session::flash('success','Article a été supprimée avec succès');
-        return redirect()->back();
+        return redirect(route('abonnement.index'));
     }
 }

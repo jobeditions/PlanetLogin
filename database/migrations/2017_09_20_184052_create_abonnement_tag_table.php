@@ -15,8 +15,10 @@ class CreateAbonnementTagTable extends Migration
     {
         Schema::create('abonnement_tag', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('abonnement_id');
-            $table->integer('tag_id');
+            $table->UnsignedInteger('abonnement_id');
+            $table->foreign('abonnement_id')->references('id')->on('abonnements');
+            $table->UnsignedInteger('tag_id');
+            $table->foreign('tag_id')->references('id')->on('tags');
             $table->timestamps();
         });
         

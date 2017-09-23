@@ -28,13 +28,15 @@
 
                                   <div class="panel-body">
                                       <div class="form">
-                                          <form action="{{action('AbonnementController@store')}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                                          <form action="{{action('AbonnementController@update',['id' => $abon->id])}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                                               {{csrf_field()}}
+                                              {{method_field('PUT')}}
                                               
                                               <div class="col-sm-10">
                                                 <label class="control-label col-sm-1" for="title">Titre</label>
                                                 <input class="form-control" type="text" id="title" name="title" value={{$abon->title}}>
                                               </div>
+
 
                                               <div class="col-sm-10">
                                                 <label class="control-label col-sm-1" for="number">Ordre</label>
@@ -50,13 +52,31 @@
                                                  <label class="control-label col-sm-1" for="category">Category</label>
                                                   <select name="category_id" id="category" class="form-control">
                                                     @foreach($categories as $category)
-                                                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                      <option value="{{ $category->id }}" 
+                                                         @if($abon->category->id == $category->id)
+                                                            selected
+                                                         @endif
+                                                        >{{ $category->name }}</option>
                                                     @endforeach
                                                   </select>
                                               </div>
 
+                                               <div class="col-sm-10">
+                                                <label class="control-label col-sm-1" for="tags">Select_tags</label>                                     
+                                                   <select class="form-control select2multi" name="tags[]" multiple="multiple" >
+                                                     @foreach($tags as $tag)
+                                                     <option value="{{ $tag->id }}"
+                                                         @foreach($abon->tags as $t)
+                                                            @if($tag->id == $t->id)
+                                                               selected
+                                                            @endif
+                                                         @endforeach
+                                                         >{{ $tag->name }}</option>
+                                                     @endforeach
 
-                                              
+                                                   </select>
+                                              </div>
+
                                               <div class="col-sm-10">
                                                  <label class="control-label col-sm-1" for="currency">Currency </label>
                                                  <input class="form-control" type="text" id="currency" name="currency" value={{$abon->currency}}>
@@ -74,7 +94,7 @@
 
                                               <div class="col-sm-10">
                                                   <label class="control-label col-sm-1">TEXTE</label>
-                                                  <textarea type="text" class="form-control" name="description" rows="6" value={{$abon->description}}></textarea>
+                                                  <textarea type="text" class="form-control" name="description" rows="6">{{$abon->description}}</textarea>
                                               </div>
 
                                               <div class="col-sm-10"><p></p><p></p></div>

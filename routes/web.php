@@ -32,8 +32,11 @@ Route::get('/', function () {
    Route::get('/increment/{id}/{qty}', 'ShopController@increment')->name('cart.increment');
    Route::get('/decrement/{id}/{qty}', 'ShopController@decrement')->name('cart.decrement');
    });
+
    Route::get('paiement/content/', 'CheckoutController@index')->name('checkout.panier');
-   Route::post('/checkout_process', 'CheckoutController@checkout_process');
+   Route::post('/checkout_process', 'CheckoutController@checkout_process')->name('checkout.process');
+   Route::post('/subscribe_process', 'CheckoutController@subscribe_process')->name('checkout.subscribe');
+
    Route::get('articles/content/{id}', 'PageController@show')->name('articles.show');
    Route::get('articlesann/content/{id}', 'PageController@ann_show')->name('articles_ann.show');
    

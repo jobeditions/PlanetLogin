@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Cart;
+use App\User;
 use Session;
 use Stripe\Charge;
 use Stripe\Stripe;
@@ -51,6 +52,31 @@ class CheckoutController extends Controller
         return $ex->getMessage();}
       
     }
+
+    public function subscribe_process(Request $request)
+    {
+    try {
+        Stripe::setApiKey('sk_test_akAjq6p4K7SAq9MqtmFvjHLY');
+
+        $token = Token::create(array(
+            "card" => array(
+                "number" => $request->cc_number,
+                "exp_month" => $request->cc_month,
+                "exp_year" => $request->cc_year,
+                "cvc" => $request->cc_cvc
+            )
+        ));
+
+        $user = User::find(1);
+
+        $user->newSubscription('main', 'bronze_plan')->create($token->id);
+
+        return 'Subscription successful, you get the course!';
+    } catch (\Exception $ex) {
+        return $ex->getMessage();
+    }
+
+}
     
 
 }

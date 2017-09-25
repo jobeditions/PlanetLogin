@@ -770,7 +770,79 @@
                                                     <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
                                                 </div>
                                             </li>
-                                             <div class="cheque">
+
+                                            <div class="cheque">
+                                            
+                                             <div class="logos">
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/visa.png" alt="Visa">
+                                               </a>
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/mastercard.png" alt="MasterCard">
+                                               </a>
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/discover.png" alt="DISCOVER">
+                                               </a>
+                                               <a href="#" class="logos-item">
+                                                 <img src="/img/ecommerce/card/amex.png" alt="Amex">
+                                               </a>
+                                            </div>
+                                               </br>
+
+    
+                                               <div class="small-6 small-centered columns">
+                                                   <form action="{{route('checkout.subscribe')}}" method="POST" id="payment-form">
+
+                                                        {{csrf_field()}}
+                                                    <span class="payment-errors"></span>
+
+                                                    <div class="form-row">
+                                                        <label>
+                                                           <span>Votre email:</span>
+                                                           <input type="text" size="30" name="email">
+                                                        </label>
+                                                    </div>
+
+
+                                                    <div class="form-row">
+                                                        <label>
+                                                           <span>N° carte bancaire:</span>
+                                                           <input type="text" size="20" name="cc_number">
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <label>
+                                                            <span>Expiration (MM/AA):</span>
+                                                            <select name="cc_month">
+                                                            @for ($i=1; $i <= 12; $i++)
+                                                            <option value="{{ $i }}">{{ $i }}</option>
+                                                            @endfor
+                                                            </select>
+                                                            <span> / </span>
+                                                            <select name="cc_year">
+                                                            {{$year = date('Y')}};
+                                                            @for ($i=$year; $i <= $year+10; $i++)
+                                                            <option value="{{ $i }}">{{ $i }}</option>
+                                                            @endfor
+                                                            </select>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                         <label>
+                                                             <span>CVC</span>
+                                                             <input type="text" size="4" name="cc_cvc">
+                                                         </label>
+                                                    </div>
+
+
+                                                    <input type="submit" class="submit button success" value="Submit Payment">
+                                                    </form>
+                                             </div>
+   
+                                             </div>
+                                             <!--<div class="cheque">
                                             
                                              <div class="logos">
                                                <a href="#" class="logos-item">
@@ -840,7 +912,7 @@
                                                     </form>
                                              </div>
    
-                                             </div>
+                                             </div>-->
                                              </div>
 
                                         </ul>

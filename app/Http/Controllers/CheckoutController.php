@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use Cart;
+use App\orders;
 use App\User;
 use Session;
 use Stripe\Charge;
@@ -45,9 +46,11 @@ class CheckoutController extends Controller
         ));
       
        Cart::destroy();
+       orders::createOrder();
        Mail::to($request->email)->send(new \App\Mail\PurchaseSuccessful);
        Session::flash('success', 'Purchase successfull. wait for our email.');
        return redirect()->back();
+       Session::flash('success', 'Purchase has been succesful.');
        } catch (\Exception $ex) {
         return $ex->getMessage();}
       
@@ -70,9 +73,13 @@ class CheckoutController extends Controller
         $user = User::find(1);
 
         $user->newSubscription('main', 'bronze_plan')->create($token->id);
-
-        return 'Subscription successful, you get the course!';
-    } catch (\Exception $ex) {
+        Cart::destroy();
+        //Create the order
+       orders::createOrder();
+        Mail::to($request->email)->send(new \App\Mail\PurchaseSuccessful);
+        return redirect()->back();
+        Session::flash('success', 'Abonnement created succesfully.');
+        } catch (\Exception $ex) {
         return $ex->getMessage();
     }
 

@@ -842,7 +842,7 @@
                                              </div>
    
                                              </div>
-                                             <!--<div class="cheque">
+                                             <div class="cheque">
                                             
                                              <div class="logos">
                                                <a href="#" class="logos-item">
@@ -912,7 +912,7 @@
                                                     </form>
                                              </div>
    
-                                             </div>-->
+                                             </div>
                                              </div>
 
                                         </ul>
